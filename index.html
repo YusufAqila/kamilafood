@@ -1,0 +1,4147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamila Food</title>
+
+    <!--Font Awesome's Kit  -->
+    <script src="https://kit.fontawesome.com/08eeba6ee5.js" crossorigin="anonymous"></script>
+    
+    <style>
+        /* Poppins, Inter, Lato Font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lato:wght@400;700;900&family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body{
+            margin: 0;
+            max-height: 100vh;
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+        div.container{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            background-color: #f2f2f2;
+            max-height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+        nav{
+            padding: 0;
+            margin: 0;
+            width: 5%;
+            background-color: #f2f2f2;
+            margin-top: 20px;
+            
+
+        }
+        div.page{
+            width: 70%;
+            background-color: #f2f2f2;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            margin-top: 0;
+            position: relative; 
+        }
+        div.page2{
+
+            width: 70%;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            background-color: #f2f2f2;
+            height: 100vh;
+            margin-top: 0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        div.page3{
+            width: 70%;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            background-color: #f2f2f2;
+            height: 100vh;
+            margin-top: 0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        div.page4{
+            width: 70%;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            background-color: #f2f2f2;
+            height: 100%;
+            margin-top: 0;
+            position: relative;
+        }
+        div.page5{
+
+            width: 70%;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            background-color: #f2f2f2;
+            height: 100vh;
+            margin-top: 0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        div.page6{
+            width: 70%;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            background-color: #f2f2f2;
+            height: 100%;
+            margin-top: 0;
+            position: relative;
+        }
+        div.page7{
+            width: 70%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            height: 100%;
+            
+        }
+        div.page8{
+            width: 70%;
+            overflow-y: scroll;
+            max-height: 100vh;
+            overflow-x: hidden;
+            
+        }
+        div.page9{
+            width: 70%;
+            overflow-y: scroll;
+            max-height: 100vh;
+            overflow-x: hidden;
+            
+        }
+        div.page10{
+            width: 70%;
+            overflow-y: scroll;
+            max-height: 100vh;
+            overflow-x: hidden;
+            
+        }
+        div.page11{
+            width: 70%;
+            overflow-y: scroll;
+            max-height: 100vh;
+            overflow-x: hidden;
+            
+        }
+        div.checkoutSec{
+            width: 25%;
+        }
+        div.pa{
+            display: none;
+        }
+        ul{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30%;
+            
+        }
+        
+        li{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            /* border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center; */
+            margin-bottom: 30px;
+            position: relative;
+        }
+        li span{
+            visibility: hidden;
+            width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 20%;
+  left: 50%;
+  margin-left: -15px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  transform: rotate(90deg);
+  font-family: 'poppins',sans-serif;
+  z-index: 5;
+        }
+        li span::after{
+            content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+  z-index: 5;
+        }
+        li.houseContainer:hover span{
+            visibility: visible;
+            opacity: 1;
+        }
+        li.cartContainer:hover span{
+            visibility: visible;
+            opacity: 1;
+        }
+        li.favoritContainer:hover span{
+            visibility: visible;
+            opacity: 1;
+        }
+        li.aboutContainer:hover span{
+            visibility: visible;
+            opacity: 1;
+        }
+        li.questionContainer:hover span{
+            visibility: visible;
+            opacity: 1;
+        }
+        li i.fa-solid{
+            color: #808080;
+            border: none;
+            text-decoration: none;
+            padding: 0;
+            margin: 0;
+            font-size: 20px;
+            transition: .5s;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        li i.fa-solid:hover{
+            margin-left: 10px;
+        }
+
+        li i.fa{
+            background-color: #ff8c00;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow:
+            5.3px 12.5px 10px rgba(0, 0, 0, 0.065),
+            42px 100px 80px rgba(0, 0, 0, 0.13)
+;
+        }
+        h1.merk, h2.daftar-menu{
+            font-family: 'Poppins', sans-serif;
+        }
+        h1.merk{
+            font-size:25px;
+            margin-top: 0;
+            padding-top: 20px;
+            margin-bottom: 30px;
+            position: sticky;
+            top: 0%;
+            z-index: 4;
+            background-color: #f2f2f2;
+        }
+        h2.daftar-menu{
+            font-size: 20px;
+            margin-top: 32px;
+        }
+        div.banner{
+            width: 100%;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        div.banner img{
+            width: 100%;
+        }
+        div.container-card{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            height: 100%;
+        }
+        div.card{
+            width: 250px;
+            height: 400px;
+            margin-bottom: 80px;
+            border-radius: 20px;
+            background-color: #f2f2f2;
+            box-shadow:
+  1.5px 2px 10px rgba(0, 0, 0, 0.075),
+  12px 16px 80px rgba(0, 0, 0, 0.15)
+;
+            cursor: pointer;
+            transition: all ease .5s;
+            position: relative;
+        }
+        div.card:hover{
+            box-shadow:
+  1.5px 2px 10px rgba(0, 0, 0, 0.205),
+  12px 16px 80px rgba(0, 0, 0, 0.41)
+;
+        }
+        div.card img{
+            width: 100%;
+            object-fit: cover;
+            height: 60%;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+       }
+       div.star{
+           display: flex;
+           width: 100%;
+           padding: 0;
+           justify-content: flex-start;
+           align-items: center;
+           margin-top: 10px;
+           margin-bottom: 60px;
+
+
+       }
+       div.star i{
+           font-size: 15px;
+           color: #ff8c00;
+           margin: 0;
+           padding: 0;
+
+
+       }
+       div.star-produk{
+           display: flex;
+           width: 100%;
+           padding: 0;
+           margin: 0;
+           justify-content: flex-start;
+
+       }
+       div.star-produk i{
+           font-size: 15px;
+           color: #ff8c00;
+           margin: 0;
+           padding: 0;
+       }
+       div.desk{
+           display: flex;
+           margin: 0;
+           height: 40%;
+           margin-left: 20px;
+       }
+       .deskbag2{
+           position: absolute;
+           bottom: 20px;
+           right: 10px; 
+           
+       }
+       .deskbag2 i{
+           color: #fff;
+           border-radius: 50%;
+           background-color: #ff8c00;
+           font-size: 20px;
+           padding: 10px;
+           transition: all .3s;
+       }
+       div.deskbag1 span:first-child{
+           font-size: 20px;
+           font-family: 'lato',sans-serif;
+           font-weight: bold;
+       }
+       div.deskbag1 span:last-child{
+           font-size: 15px;
+           font-family: 'lato',sans-serif;
+           font-weight: bold;
+       }
+       div.card-click{
+           width: 100%;
+           height: 80%;
+           position: absolute;
+           z-index: 3;
+       }
+       i.fa-plus{
+           z-index: 5;
+       }
+
+       div.container-ayambkr{
+           display: flex;
+           justify-content: flex-start;
+           align-items: baseline;
+           flex-direction: column;
+           position: relative;
+       }
+       div.back{
+           margin-right: 20px;
+           transform: rotate(90deg);
+           border-radius: 50%;
+           width: 50px;
+           height: 50px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           background: rgba(255,140, 0.1);
+           backdrop-filter: blur(5px);
+           cursor: pointer;
+           box-shadow:
+  19px 43px 80px rgba(0, 0, 0, 0.09)
+;
+        transition: all ease .3s;
+        padding-bottom: 0;
+       }
+       
+       div.back:hover{
+           filter: brightness(120%);
+       }
+       div.back i{
+           font-size: 25px;
+           color: #fff;
+           
+       }
+       div.judulAyamBkr{
+           display: flex;
+           align-items: baseline;
+           width: 100%;
+           position: sticky;
+           top: 0;
+           background-color: #f2f2f2;
+           padding: 0;
+           
+       }
+       div.judulAyamBkr h1.merk{
+           padding-bottom: 0;
+           margin-top: 20px;
+           margin-bottom: 20px;
+           padding: 0;
+       }
+       .ayamBkrImg{
+           width: 100%;
+           object-fit: auto;
+           height: 500px;
+       }
+       .ayamBkrImg img{
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+       }
+       h1.produk{
+           margin: 0;
+           padding: 0;
+           font-size: 25px;
+           font-weight: 700;
+           font-family: 'Poppins', sans-serif;
+           
+       }
+       span.hargaAyamBkr{
+           font-size: 20px;
+           font-family: 'Lato',sans-serif;
+           font-weight: 700;
+           margin: 0;
+           margin-bottom: 20px;
+       }
+       span.deskAyamBkr{
+           font-family: 'lato',sans-serif;
+           font-weight: 700;
+           font-size: 18px;
+           width: 80%;
+           letter-spacing: 1px;
+           text-indent: 50px;
+           margin-bottom: 50px;
+           width: 100%;
+       }
+       div.favoritbtn{
+           margin: 0;
+           display: flex;
+           align-items: center;
+           margin-right: 20px;
+       }
+       div.favoritbtn i{
+           font-size: 35px;
+           color: #ff0000;
+           cursor: pointer;
+       }
+       div.favoritbtn i:first-child{
+           color: #808080;
+       }
+      
+       div.ketAyamBkr{
+           width: 100%;
+           height: 22%;
+           display: flex;
+           justify-content: flex-start;
+           flex-direction: column;
+           margin-bottom: 300px;
+       }
+       div.containerKetAyamBkr{
+           display: flex;
+           flex-direction: row;
+           justify-content: space-between;
+           margin-top: 30px;
+       }
+       div.beliKeranjang{
+           display: flex;
+           flex-direction: row;
+           flex-wrap: wrap;
+           width: 100%;
+           justify-content: space-evenly;
+           margin-top: 100px;
+           height: 300px;
+           align-items: flex-end;
+           position: absolute;
+       }
+       div.container-beli{
+           width: 70%;
+           /* position: absolute; */
+           height: 300px;
+           display: flex;
+           align-items: flex-end;
+           /* bottom: 300px; */
+       }
+       div.beliKeranjang div.container-beli input{
+           width: 100%;
+           height: 50px;
+           background-color: #ff8c00;
+           cursor: pointer;
+           color: #fff;
+           font-size: 20px;
+           font-family: 'poppins',sans-serif;
+           font-weight: 500;
+           border: none;
+           text-decoration: none;
+           border-radius: 10px;
+           z-index: 4;
+       }
+       div.beliKeranjang div.container-beli input:hover{
+           filter: brightness(80%);
+           transition:all .3s ease-in-out;
+           
+       }
+       div.beliKeranjang div.container-beli input:focus {
+        border: 2px solid black;
+       }
+       div.backgroundBeliKeranjang{
+           display: flex;
+           background-color: #f2f2f2;
+           height: 300px;
+           position: absolute;
+           width: 70%;
+           z-index: 3;
+           border-radius: 10px;
+           box-shadow:
+  0px 0px 5.3px rgba(0, 0, 0, 0.065),
+  0px 0px 17.9px rgba(0, 0, 0, 0.095),
+  0px 0px 80px rgba(0, 0, 0, 0.16)
+;
+
+       }
+      
+       div.bk{
+           display: none;
+       }
+       div.beliAyamBkr{
+           width: 100%;
+           height: 100%;
+           display: flex;
+           align-items: flex-start;
+       }
+       img.imgAyamBkr{
+           width: 40%;
+           object-fit: cover;
+           height: 240px;
+           border-top-left-radius: 10px;
+       }
+       span.spanAyamBkr{
+           font-family: "poppins",sans-serif;
+           font-weight: 700;
+           font-size: 20px;
+           margin-left: 20px;
+       }
+       div.jumlahAyamBkr{
+           display: flex;
+           flex-direction: row;
+           margin-left: 20px;
+           align-items: center;
+       }
+       div.jumlahAyamBkr2{
+           display: flex;
+           flex-direction: row;
+           align-items: center;
+           margin-left: 20px;
+           width: 200px;
+           justify-content: center;
+           height: 100%;
+       }
+       div.ketBeliAyamBkr{
+           width: 60%;
+           height: 240px;
+           display: flex;
+           flex-direction: column;
+           justify-content: space-around;
+           
+       }
+       div.beliAyamBkr div.ketBeliAyamBkr div.jumlahAyamBkr span.spanAyamBkr2{
+           font-family: 'lato',sans-serif;
+           font-weight: 800;
+           font-size: 18px;
+       }
+       div.beliAyamBkr div.ketBeliAyamBkr div.jumlahAyamBkr2 span.valueJmlAyam{
+           background-color: #f2f2f2;
+           width: 60px;
+           border-radius: 0%;
+           height: 40px;
+           margin: 0;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           font-family: 'poppins', sans-serif;
+           font-weight: 600;
+           font-size: 20px;
+       }
+       div.beliAyamBkr div.ketBeliAyamBkr div.jumlahAyamBkr2 span.valueJmlAyam:hover{
+           filter: none;
+       }
+       div.beliAyamBkr div.ketBeliAyamBkr div.jumlahAyamBkr2 span.fa-solid{
+           padding: 0px;
+           margin: 0;
+           background-color: #ff8c00;
+           cursor: pointer;
+           color: #f2f2f2;
+           height: 100%;
+           width: 40px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           font-size: 18px;
+           transition: all .5s ease;
+       }
+       div.beliAyamBkr div.ketBeliAyamBkr div.jumlahAyamBkr2 span.fa-solid:hover{
+           filter: brightness(80%);
+       }
+       div.beliKeranjang button:last-child{
+           width: 10%;
+           height: 50px;
+           cursor: pointer;
+           background-color: #ff8c00;
+           cursor: pointer;
+           color: #fff;
+           font-size: 20px;
+           font-family: 'poppins',sans-serif;
+           font-weight: 500;
+           border: none;
+           text-decoration: none;
+           border-radius: 10px;
+       
+       }
+       div.checkoutSec{
+           border: none;
+           display: flex;
+           flex-direction: column;
+           height: 100vh;
+           margin: 0;
+           padding: 0;
+       }
+       div.containerTagihan{
+           display: flex;
+           align-items: center;
+           width: 100%;
+           position: relative;
+           margin: 0;
+           margin-top: 25vh;
+           margin-bottom: 15vh;
+
+       }
+       div.tagihanBox{
+           width: 90%;
+           height: 200px;
+           border-radius: 20px;
+           position: absolute;
+           background-color: #ff8c00;
+           background: rgba(255, 255, 255, 0.1);
+           box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+           border-top: 1px solid rgba(255, 255, 255, 0.5);
+           border-left: 1px solid rgba(255, 255, 255, 0.5);
+           backdrop-filter: blur(5px);
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: space-between;
+           right: 20px;
+           
+
+       }
+       div.bgTagihanBox{
+           background-color: #ff8c00;
+           width: 90%;
+           height: 200px;
+           border-radius: 20px;
+           position: absolute;
+           transform: rotate(8deg);
+           right: 20px;
+           margin: 0;
+
+       }
+       div.tagihanBox span{
+           color: #fff;
+           font-family: 'Poppins',sans-serif;
+       }
+       div.tagihanBox span:first-child{
+           font-size: 20px;
+           font-weight: 600;
+       }
+       div.tagihanBox span:last-child{
+           font-size: 15px;
+           font-weight: 400;
+           margin-bottom: 20px;
+       }
+       #jmlTagihan{
+           font-size: 18px;
+           color: #fff;
+           font-family: 'poppins',sans-serif;
+           border: none;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           text-align: center;
+           background: none;
+           margin-bottom: 10px;
+       }
+       div.cardOrder{
+           width: 100%;
+           display: flex;
+           flex-direction: row;
+           justify-content: center;
+           border-radius: 10px;
+           box-shadow:
+  4px 0px 10px rgba(0, 0, 0, 0.105),
+  32px 0px 80px rgba(0, 0, 0, 0.21)
+;
+
+
+
+            margin-bottom: 20px;
+       }
+       div.cardOrder span.hargaCardOrder{
+           display: flex;
+           font-size: 15px;
+           font-family: 'Lato',sans-serif;
+           align-items: center;
+           width: 100%;
+           display: flex;
+           justify-content: flex-end;
+
+       }
+       div.co{
+           display: none;
+       }
+       span.minus1{
+           display: flex;
+           justify-content: center;
+           border-radius: 50%;
+           align-items: center;
+           width: 20px;
+           background-color: #ff6b6b;
+           color: #fff;
+           cursor: pointer;
+           transition: all .3s ease;
+           box-shadow:
+  0px 5px 80px rgba(0, 0, 0, 0.24)
+;
+            padding: 5px;
+
+       }
+       span.minus1:hover{
+           filter: brightness(50%);
+       }
+       div.containerCOBag3{
+           display: flex;
+           align-items:flex-end;
+           width: 40%;
+           justify-content: space-around;
+           flex-direction: column;
+           margin-right: 10px;
+           
+       }
+       div.cardOrder img{
+           width: 30%;
+           height: 100px;
+           object-fit: cover;
+           border-top-left-radius: 10px;
+           border-bottom-left-radius: 10px;
+       }
+       .cardOrderJudul{
+           display: flex;
+           flex-direction: column;
+           width: 30%;
+           font-family: 'lato',sans-serif;
+           font-weight: 600;
+           margin-left: 10px;
+           justify-content: center;
+           
+       }
+       .cardOrderJudul span{
+           font-size: 17px;
+       }
+       
+       .containerCardOrder{
+           overflow-y: scroll;
+           display: flex;
+           flex-direction: column;
+           height: 60%;
+           
+       }
+       .beliButton{
+           width: 100%;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           margin-top: 10px;
+           margin-bottom: 10px;
+       }
+       .beliButton input{
+           width: 80%;
+           height: 40px;
+           padding: 0;
+           margin: 0;
+           background-color: #ff8c00;
+           box-sizing: border-box;
+           text-decoration: none;
+           cursor: pointer;
+           border: none;
+           filter: brightness(95%);
+           color: #fff;
+           font-family: 'poppins',sans-serif;
+           font-weight: 600;
+           letter-spacing: 1px;
+           font-size: 20px;
+           border-radius: 7px;
+           box-shadow:
+  0.5px 0.8px 3.6px rgba(0, 0, 0, 0.157),
+  1.4px 2.1px 10px rgba(0, 0, 0, 0.225),
+  3.3px 5.1px 24.1px rgba(0, 0, 0, 0.293),
+  11px 17px 80px rgba(0, 0, 0, 0.45)
+;
+            transition: all ease .3s;
+       }
+       .beliButton input:hover{
+           filter: brightness(110%);
+       }
+       .beliButton input:focus{
+           filter: brightness(90%);
+           border: 2px solid black;
+       }
+       div.deskbag2 i:hover{
+        box-shadow:
+  2px 6.7px 5.3px rgba(0, 0, 0, 0.077),
+  6.7px 22.3px 17.9px rgba(0, 0, 0, 0.113),
+  30px 100px 80px rgba(0, 0, 0, 0.19)
+;
+        filter: brightness(80%);
+       }
+       .fav{
+           display: none;
+       }
+
+
+       /* CSS MU ZAK */
+       div.page4 h1{
+           background-color: #f2f2f2;
+           position: sticky;
+           position: -webkit-sticky;
+           top: 0;
+           padding-top: 20px;
+           z-index: 3;
+       }
+       div.hal1{
+           display: flex;
+           flex-direction: row;
+           height: 88vh;
+           flex-wrap: wrap;
+           background-color: #ff8c00;
+
+       }
+       div.container-hal1{
+           display: flex;
+           flex-direction: row;
+           flex-wrap: wrap;
+           justify-content: space-evenly;
+           align-items: center;
+           height: 100%;
+           width: 100%;
+
+       }
+       div.hal1 img{
+           width: 300px;
+           box-shadow:
+  8.9px 8.9px 42px rgba(0, 0, 0, 0.24),
+  40px 40px 0px #D9E6E3,
+  50px 50px 42px rgba(0, 0, 0, 0.24);
+
+       }
+       div.deskHal1{
+           width: 50%;
+           background: rgba(255, 255, 255, 0.1);
+           backdrop-filter: blur(5px);
+           border-top: 1px solid white;
+           border-left: 1px solid white;
+           border-radius: 10px;
+           box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+           padding: 20px;
+           
+       }
+       div.deskHal1 h3{
+           font-family: 'poppins', sans-serif;
+           font-size: 20px;
+           color: #fff;
+       }
+       div.deskHal1 p{
+           font-family: 'poppins', sans-serif;
+           font-size: 15px;
+           font-weight: 600;
+           margin-top: 0;
+           color: #fff;
+       }
+       div.halo2{
+           display: flex;
+           flex-direction: row;
+           height: 93vh;
+           justify-content: space-evenly;
+           align-items: center;
+           flex-wrap: wrap;
+           background-color: #D9E6E3;
+           
+       }
+       div.halo2 iframe{
+           width: 300px;
+           box-shadow:
+           -8.9px 8.9px 42px rgba(0, 0, 0, 0.24),
+  -40px 40px 0px #ff8c00,
+  -50px 50px 42px rgba(0, 0, 0, 0.24);
+       }
+       div.deskHalo2{
+           width: 50%;
+           background: #2c3e50;
+           padding: 20px;
+           border-radius: 10px;
+           color: #D9E6E3;
+       }
+       div.deskHalo2 h3{
+           font-family: 'poppins', sans-serif;
+           font-size: 20px;
+       }
+       div.deskHalo2 p{
+           font-family: 'poppins', sans-serif;
+           font-size: 15px;
+           font-weight: 600;
+           margin-top: 0;
+       }
+
+       /* Akhir dari CSS Zaki */
+       
+       /* CSS FAVORIT SECTION */
+       .container-favorit{
+           display: flex;
+           flex-wrap: wrap;
+           flex-direction: row;
+           padding: 0;
+           justify-content: center;
+           font-size: 18px;
+           
+       }
+
+       .cardFavorit{
+           height: 120px;
+           width: 300px;
+           display: flex;
+           margin: 0;
+           font-family: 'poppins', sans-serif;
+           font-weight: 600;
+           align-items: center;
+           border-radius: 10px;
+           box-shadow:
+  1.5px 2px 10px rgba(0, 0, 0, 0.06),
+  12px 16px 80px rgba(0, 0, 0, 0.12)
+;
+            position: relative;
+            margin-right: 10px;
+            margin-bottom: 50px;
+
+       }
+       .cardFavorit2{
+           height: 120px;
+           width: 300px;
+           display: flex;
+           margin: 0;
+           font-family: 'poppins', sans-serif;
+           font-weight: 600;
+           align-items: center;
+           border-radius: 10px;
+           box-shadow:
+  1.5px 2px 10px rgba(0, 0, 0, 0.06),
+  12px 16px 80px rgba(0, 0, 0, 0.12)
+;
+            position: relative;
+            margin-right: 10px;
+            margin-bottom: 50px;
+
+       }
+       .cardFavorit3{
+           height: 120px;
+           width: 300px;
+           display: flex;
+           margin: 0;
+           font-family: 'poppins', sans-serif;
+           font-weight: 600;
+           align-items: center;
+           border-radius: 10px;
+           box-shadow:
+  1.5px 2px 10px rgba(0, 0, 0, 0.06),
+  12px 16px 80px rgba(0, 0, 0, 0.12)
+;
+            position: relative;
+            margin-bottom: 50px;
+
+       }
+       .cardFavorit4{
+           height: 120px;
+           width: 300px;
+           display: flex;
+           margin: 0;
+           font-family: 'poppins', sans-serif;
+           font-weight: 600;
+           align-items: center;
+           border-radius: 10px;
+           box-shadow:
+  1.5px 2px 10px rgba(0, 0, 0, 0.06),
+  12px 16px 80px rgba(0, 0, 0, 0.12)
+;
+            position: relative;
+            margin-right: 10px;
+            margin-bottom: 50px;
+
+       }
+       .cardFavorit5{
+           height: 120px;
+           width: 300px;
+           display: flex;
+           margin: 0;
+           font-family: 'poppins', sans-serif;
+           font-weight: 600;
+           align-items: center;
+           border-radius: 10px;
+           box-shadow:
+  1.5px 2px 10px rgba(0, 0, 0, 0.06),
+  12px 16px 80px rgba(0, 0, 0, 0.12)
+;
+            position: relative;
+            margin-right: 10px;
+            margin-bottom: 50px;
+
+       }
+       .cardFavorit6{
+           height: 120px;
+           width: 300px;
+           display: flex;
+           margin: 0;
+           font-family: 'poppins', sans-serif;
+           font-weight: 600;
+           align-items: center;
+           border-radius: 10px;
+           box-shadow:
+  1.5px 2px 10px rgba(0, 0, 0, 0.06),
+  12px 16px 80px rgba(0, 0, 0, 0.12)
+;
+            position: relative;
+            margin-bottom: 50px;
+
+       }
+       .cardFavorit img{
+           width: 100px;
+           height: 120px;
+           object-fit: cover;
+           border-top-left-radius: 10px;
+           border-bottom-left-radius: 10px;
+           margin-right: 20px;
+       }
+       .cardFavorit2 img{
+           width: 100px;
+           height: 120px;
+           object-fit: cover;
+           border-top-left-radius: 10px;
+           border-bottom-left-radius: 10px;
+           margin-right: 20px;
+       }
+       .cardFavorit3 img{
+           width: 100px;
+           height: 120px;
+           object-fit: cover;
+           border-top-left-radius: 10px;
+           border-bottom-left-radius: 10px;
+           margin-right: 20px;
+       }
+       .cardFavorit4 img{
+           width: 100px;
+           height: 120px;
+           object-fit: cover;
+           border-top-left-radius: 10px;
+           border-bottom-left-radius: 10px;
+           margin-right: 20px;
+       }
+       .cardFavorit5 img{
+           width: 100px;
+           height: 120px;
+           object-fit: cover;
+           border-top-left-radius: 10px;
+           border-bottom-left-radius: 10px;
+           margin-right: 20px;
+       }
+       .cardFavorit6 img{
+           width: 100px;
+           height: 120px;
+           object-fit: cover;
+           border-top-left-radius: 10px;
+           border-bottom-left-radius: 10px;
+           margin-right: 20px;
+       }
+       .cardFavorit i.fa-solid{
+           position: absolute;
+           bottom: 20px;
+           right: 10px;
+           font-size: 20px;
+           color: #808080;
+           cursor: pointer;
+           transition: all ease .3s;
+           
+           
+       }
+       .cardFavorit2 i.fa-solid{
+           position: absolute;
+           bottom: 20px;
+           right: 10px;
+           font-size: 20px;
+           color: #808080;
+           cursor: pointer;
+           transition: all ease .3s;
+           
+           
+       }
+       .cardFavorit3 i.fa-solid{
+           position: absolute;
+           bottom: 20px;
+           right: 10px;
+           font-size: 20px;
+           color: #808080;
+           cursor: pointer;
+           transition: all ease .3s;
+           
+           
+       }
+       .cardFavorit4 i.fa-solid{
+           position: absolute;
+           bottom: 20px;
+           right: 10px;
+           font-size: 20px;
+           color: #808080;
+           cursor: pointer;
+           transition: all ease .3s;
+           
+           
+           
+       }
+       .cardFavorit5 i.fa-solid{
+           position: absolute;
+           bottom: 20px;
+           right: 10px;
+           font-size: 20px;
+           color: #808080;
+           cursor: pointer;
+           transition: all ease .3s;
+           
+           
+       }
+       .cardFavorit6 i.fa-solid{
+           position: absolute;
+           bottom: 20px;
+           right: 10px;
+           font-size: 20px;
+           color: #808080;
+           cursor: pointer;
+           transition: all ease .3s;
+           
+           
+       }
+       .cardFavorit i.fa-solid:hover{
+           filter: brightness(80%); 
+       }
+       .cardFavorit2 i.fa-solid:hover{
+           filter: brightness(80%); 
+       }
+       .cardFavorit3 i.fa-solid:hover{
+           filter: brightness(80%); 
+       }
+       .cardFavorit4 i.fa-solid:hover{
+           filter: brightness(80%); 
+       }
+       .cardFavorit5 i.fa-solid:hover{
+           filter: brightness(80%); 
+       }
+       .cardFavorit6 i.fa-solid:hover{
+           filter: brightness(80%); 
+       }
+
+       .deskCardFavorit{
+           display: flex;
+           flex-direction: column;
+           width: 150px;
+           align-items: flex-start;
+       }
+       .deskCardFavorit span:first-child{
+           font-size: 18px;
+           padding: 0;
+           margin: 0;
+           display: flex;
+           justify-content: flex-start;
+       }
+       .deskCardFavorit span:last-child{
+           font-size: 15px;
+        padding: 0;
+        display: flex;
+        justify-content: flex-start;
+       }
+       i.ha{
+           display: none;
+       }
+       div.ca{
+           display: none;
+       }      
+       div.page3 h1.merk{
+           width: 100%;
+       }
+       /* Akhir dari CSS FAVORIT SECTION */
+
+       /* Awal dari CSS KERANJANG SECTION */
+       div.container-keranjang{
+           width: 100%;
+           display: flex;
+           flex-direction: column;
+           flex-wrap: wrap;
+           justify-content: space-around;
+           align-items: center;
+           height: 70%;
+           margin: 0;
+       }
+       div.containerCardKeranjang{
+           display: flex;
+           flex-direction: row;
+           flex-wrap: wrap;
+           justify-content: flex-start;
+           align-items: flex-start;
+           width: 100%;
+           height: 70%;
+           margin-top: 0;
+       }
+       div.cardKeranjang{
+           display: flex;
+           flex-direction: row;
+           border-radius: 10px;
+           width: 300px;
+           box-shadow:
+  0.9px 1.8px 12.1px rgba(0, 0, 0, 0.06),
+  7px 14px 97px rgba(0, 0, 0, 0.12)
+;
+           margin: 5px;
+           
+
+       }
+       div.cardKeranjang div.deskCardKeranjang{
+           display: flex;
+           flex-direction: column;
+           align-items: flex-start;
+           justify-content: flex-start;
+           width: 150px;
+       }
+       div.cardKeranjang div.deskCardKeranjang span:first-child{
+           font-family: 'poppins',sans-serif;
+           font-size: 18px;
+           font-weight: bold;
+           margin-bottom: 0;
+           padding: 0;
+           margin-top: 20px;
+       }
+       div.cardKeranjang div.deskCardKeranjang span.spanCardKeranjang{
+           font-family: 'lato',sans-serif;
+           font-size: 15px;
+           font-weight: bold;
+           color: #292929;
+           margin-bottom: 10px;
+       }
+       div.cardKeranjang div.deskCardKeranjang div.jumlahAyamBkr3{
+           padding: 0;
+           margin: 0;
+           display: flex;
+           align-items: center;
+           justify-content: flex-start;
+           flex-direction: row;
+           box-shadow:
+  0.9px 1.8px 12.1px rgba(0, 0, 0, 0.095),
+  7px 14px 97px rgba(0, 0, 0, 0.19)
+;
+
+
+       }
+       div.cardKeranjang div.deskCardKeranjang div.jumlahAyamBkr3 span.fa-solid{
+            width: 30px;
+            height: 30px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 600;
+            background-color: #ff8c00;
+            color: #f2f2f2;
+            border-radius: 5px;
+            transition: all .5s ease;
+            cursor: pointer;
+
+       }
+
+       div.cardKeranjang div.deskCardKeranjang div.jumlahAyamBkr3 span.valueJmlAyam2{
+            width: 35px;
+            height: 35px;
+            margin: 0;
+            padding: 0;
+            font-family: 'poppins',sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+       }
+       div.cardKeranjang img{
+           width: 100px;
+           height: 120px;
+           object-fit: cover;
+           border-top-left-radius: 10px;
+           border-bottom-left-radius: 10px;
+           margin-right: 20px;
+      
+       }
+       div.containerKeranjangBtn{
+           width: 30px;
+           border-top-right-radius: 5px;
+           border-bottom-right-radius: 5px;
+           display: flex;
+           align-items: flex-end;
+           justify-content: flex-end;
+           margin-right: 15px;
+           margin-top: 15px;
+           margin-bottom: 15px;
+           font-size: 20px;
+           color: #808080;
+           display: flex;
+           flex-direction: column;
+           justify-content: space-between;
+       }
+
+       div.containerKeranjangBtn i.cbx{
+           color: #ff8c00;
+           font-size: 24px;
+           cursor: pointer;
+       }
+       div.cb{
+           display: none;
+       }
+       i.cb{
+           display: none;
+       }
+       .favoritKeranjangBtn{
+           cursor: pointer;
+           transition: all ease .3s;
+       }
+       .favoritKeranjangBtn:hover{
+           filter: brightness(80%);
+       }
+       span#keranjangSpan{
+           font-size: 20px;
+           font-family: 'poppins',sans-serif;
+           display: none;
+       }
+       div.page2 h1.merk{
+           width: 100%;
+           margin-bottom: 0;
+       }
+       div.beliKeranjangBtn{
+           background-color: #f2f2f2;
+           box-shadow:
+  0px 1.4px 10px rgba(0, 0, 0, 0.095),
+  0px 11px 80px rgba(0, 0, 0, 0.19)
+;
+           height: 80px;
+           display: flex;
+           flex-direction: column;
+           justify-content: space-between;
+           align-items: center;
+           border-radius: 10px;
+           width: 400px;
+           
+       }
+       div.beliKeranjangBtn div.deskKeranjangBtn{
+           height: 50%;
+           display: flex;
+           flex-direction: row;
+           justify-content: space-between;
+           width: 90%;
+           align-items: center;
+
+       }
+       div.beliKeranjangBtn div.deskKeranjangBtn span{
+           font-family: 'open sans',sans-serif;
+           font-weight: 600;
+           
+       }
+       div.beliKeranjangBtn input#beliKeranjangBtn2{
+           border: none;
+           background-color: rgba(255, 140, 0, 1);
+           width: 100%;
+           height: 40px;
+           border-radius: 10px;
+           color: #f2f2f2;
+           font-family: 'poppins',sans-serif;
+           font-size: 18px;
+           font-weight: 600;
+           letter-spacing: 1px;
+           transition: .2s all ease;
+           cursor: pointer;
+           border-top-left-radius: unset;
+           border-top-right-radius: unset;
+       }
+       div.beliKeranjangBtn input#beliKeranjangBtn2:focus{
+           border: 2px solid black;
+           filter: brightness(90%);
+       }
+       
+       /* Akhir dari CSS KERANJANG SECTION */
+
+       /* Footer Section */
+       div.footer{
+        background-color: #111111;
+           width: 100%;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           height: 200px;
+           /* position: sticky;
+           bottom: 0; */
+           margin: 0;
+           position: unset;
+       }
+       div.footer2{
+        background-color: #111111;
+           width: 100%;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           height: 200px;
+           /* position: sticky;
+           bottom: 0; */
+           margin: 0;
+           position: unset;
+           color: white;
+           transform: none;
+       }
+       div.footer3{
+        background-color: #111111;
+           width: 100%;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           height: 200px;
+           /* position: sticky;
+           bottom: 0; */
+           margin: 0;
+           position: static;
+           color: white;
+           transform: none;
+           
+       }
+       div.footHome{
+           background-color: #111111;
+           width: 100%;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           height: 200px;
+           /* position: sticky;
+           bottom: 0; */
+           margin: 0;
+           position: unset;
+
+       }
+       div.footProduk{
+           background-color: #111111;
+           width: 100%;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           height: 200px;
+           position: absolute;
+           bottom: 0;
+
+       }
+       div.social-media{
+           display: flex;
+           flex-direction: row;
+           justify-content: space-between;
+           align-items: center;
+           margin-bottom: 40px;
+       }
+       div.social-media div:first-child{
+           width: 50px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           margin-right: 50px;
+           border-radius: 10px;
+           height: 50px;
+           background: rgba(255, 255, 255, 0.1);
+           backdrop-filter: blur(5px);
+           cursor: pointer;
+       }
+       div.social-media div:last-child{
+           width: 50px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           border-radius: 10px;
+           height: 50px;
+           background: rgba(255, 255, 255, 0.1);
+           backdrop-filter: blur(5px);
+           cursor: pointer;
+       }
+       i.fa-instagram{
+           font-size: 30px;
+           color: #fff;
+           
+           
+       }
+       i.fa-instagram:hover{
+           color: #808080;
+       }
+       i.fa-whatsapp{
+           font-size: 30px;
+           color: #fff;
+           
+       }
+       i.fa-whatsapp:hover{
+           color: #808080;
+       }
+       div.footer span{
+           font-family: 'poppins', sans-serif;
+           font-size: 18px;
+           color: #f2f2f2;
+       }
+       div.footer span a{
+           font-weight: 700;
+           color: #fff;
+       }
+       div.footer span a:hover{
+           color: #808080;
+           font-weight: 700;
+       }
+       div.footer2 span{
+           font-family: 'poppins', sans-serif;
+           font-size: 18px;
+           color: #f2f2f2;
+       }
+       div.footer2 span a{
+           font-weight: 700;
+           color: #fff;
+       }
+       div.footer2 span a:hover{
+           color: #808080;
+           font-weight: 700;
+       }
+
+       div.footer3 span{
+           font-family: 'poppins', sans-serif;
+           font-size: 18px;
+           color: #f2f2f2;
+       }
+       div.footer3 span a{
+           font-weight: 700;
+           color: #fff;
+       }
+       div.footer3 span a:hover{
+           color: #808080;
+           font-weight: 700;
+       }
+
+       div.page3 span{
+           font-size: 20px;
+           font-family: 'poppins', sans-serif;
+           width: 100%;
+           display: flex;
+           justify-content: center;
+       }
+       div.page3 span.sa{
+           display: none;
+       }
+       div.page2 span.ka{
+           display: none;
+       }
+       .inp{
+        border: 2px solid black;
+       }
+
+       /* Alert CSS */
+       #notification-area {
+        position:fixed;
+        top:10px;
+        right:10px;
+        width:250px;
+        height:40vh;
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-end;
+        border: 1px solid black;
+        z-index: 6;
+        }
+        #notification-area .notification-succes {
+        position:relative;
+        padding:15px 10px;
+        background:#f2f2f2;
+        color: black;
+        border-left: 6px solid #389838;
+        font-family:"Raleway";
+        font-size:14px;
+        font-weight:500;
+        border-radius:5px;
+        margin:5px 0px;
+        opacity:0;
+        left:20px;
+        
+        font-family: 'lato',sans-serif;
+        }
+        #notification-area div.showNotify{
+            animation:showNotification 500ms ease-in-out forwards;
+        }
+        #notification-area div.closeNotify{
+            opacity: 0;
+        }
+        @keyframes showNotification {
+            to {
+            opacity:1;
+            left:0px;
+            }
+        }
+       
+
+        #notification-area .success {
+        background:#389838;
+        }
+        #notification-area .notification.error {
+        background:orangered;
+        }
+        #notification-area .notification.info {
+         background:#00acee;
+        }
+        section{
+            position: relative;
+        }
+        /* Akhir dari Alert CSS */
+       </style>
+</head>
+<body>
+    <section id="section">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li class="houseContainer"><i class="fa-solid fa-house house fa"> </i><span>Beranda</span></li>
+                    <li class="cartContainer"><i class="fa-solid fa-shopping-cart cart"></i><span>Keranjang</span></li>
+                    <li class="favoritContainer"><i class="fa-solid fa-heart heart "></i><span>Favorit</span></li>
+                    <li class="aboutContainer"><i class="fa-solid fa-user user "></i><span>About</span></li>
+                    <!-- <li class="questionContainer"><i class="fa-solid fa-question tanya fa"></i><span>Ask</span></li> -->
+                    
+                </ul>
+            </nav>
+
+            <!-- House -->
+            <div class="page ">
+                <h1 class="merk">Kamila Food</h1>
+
+                <!-- gambar banner -->
+                <div class="banner">
+                    <img loading="lazy" src="bannerpromo.jpg" alt="">
+                </div>
+                
+                <h2 class="daftar-menu">Daftar Menu</h2>
+                <div class="container-card">
+                <div class="card">
+                    <div class="deskbag2" id="plus">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="card-click" id="ayambkr"></div>
+                    <img loading="lazy" src="ayambakar.jpeg" alt="">
+                 <div class="desk">
+                    <div class="deskbag1">
+                    <span>Ayam Bakar</span>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <span>Rp 18,000</span>
+                    </div>
+                    
+                 </div>
+                </div>
+
+                <div class="card">
+                    <div class="deskbag2" id="plus2">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="card-click" id="steak"> </div>
+                    <img loading="lazy" src="steak.jpeg" alt="">
+                 <div class="desk">
+                    <div class="deskbag1">
+                    <span>Steak Ayam</span>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <span>Rp 17,000</span>
+                    </div>
+                    
+                 </div>
+                </div>
+
+                <div class="card">
+                    <div class="deskbag2" id="plus3">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="card-click" id="ayambkrekr"> </div>
+                    <img loading="lazy" src="ayamekor.jpeg" alt="">
+                 <div class="desk">
+                    <div class="deskbag1">
+                    <span>Ayam Bakar Ekoran</span>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <span>Rp 75,000</span>
+                    </div>
+                    
+                 </div>
+                </div>
+
+                <div class="card">
+                    <div class="deskbag2" id="plus4">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="card-click" id="tahuwalik"> </div>
+                    <img loading="lazy" src="tahuwalik.jpeg" alt="">
+                 <div class="desk">
+                    <div class="deskbag1">
+                    <span>Tahu Walik Bakso Ikan</span>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <span>Rp 25,000</span>
+                    </div>
+
+                 </div>
+                </div>
+
+                <div class="card">
+                    <div class="deskbag2" id="plus5">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="card-click" id="nasibox"> </div>
+                    <img loading="lazy" src="nasibox.jpeg" alt="">
+                 <div class="desk">
+                    <div class="deskbag1">
+                    <span>Nasi Box</span>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <span>Rp 30,000</span>
+                    </div>
+
+                 </div>
+                </div>
+
+                <div class="card">
+                    <div class="deskbag2" id="plus6">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="card-click" id="nasibancaan"> </div>
+                    <img loading="lazy" src="nasibancaan.jpeg" alt="">
+                 <div class="desk">
+                    <div class="deskbag1">
+                    <span>Paket Nasi Bancaan</span>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <span>Rp 250,000</span>
+                    </div>
+                    
+                 </div>
+                </div>
+
+                <div class="footer footHome">
+                    <div class="social-media">
+                        <div><i class="fa-brands fa-instagram"><a href="#"></a></i></div>
+                        <div><i class="fa-brands fa-whatsapp"><a href="#"></a></i></div>
+                    </div>
+                    <span>&copy;2022 <a href="#">Kamila Food</a> - This website created by Yusuf Aqila and Zaki Hati Darmawan</span>
+                </div>
+            </div>
+
+            </div>
+
+            <!-- Page Deskripsi Produk dan Fotonya -->
+            <div class="page6 pa">
+            <div class="container-ayambkr">
+              <div class="judulAyamBkr">
+                <div class="back" id="back">
+                <i class="fa-solid fa-arrow-down"></i>
+                </div>
+                <h1 class="merk">Kamila Food</h1>
+               </div>
+                <div class="ayamBkrImg">
+                    <img loading="lazy" src="ayambakar.jpeg" alt="">
+                </div>
+            <div class="ketAyamBkr">
+                <div class="containerKetAyamBkr">
+                <h1 class="produk">Ayam Bakar</h1>
+                <div class="favoritbtn">
+                    <i class="fa-regular fa-heart " id="fabtn"></i>
+                    <i class="fa-solid fa-heart fav" id="fabtn2"></i>
+                </div>
+                </div>
+                <span class="hargaAyamBkr">Rp 18.000</span>
+               
+                
+                <span class="deskAyamBkr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis delectus asperiores aliquam, expedita ad consectetur recusandae accusantium voluptatem dolores alias nostrum deleniti ipsum similique eos dignissimos quia impedit at corporis dolore? Adipisci consequuntur minus reiciendis quae quas maiores, officia, voluptatem expedita magni assumenda odio deleniti? Error fugit ipsum reprehenderit, velit adipisci iure natus sed incidunt nisi corporis sunt, eaque distinctio quasi voluptate laborum dolor accusantium enim harum! Suscipit ipsum dolorum obcaecati recusandae magni doloremque accusamus dignissimos fuga neque tempore, sit quam. Fugit asperiores veniam sapiente corporis consequatur necessitatibus repellat, cumque nihil sunt temporibus aspernatur consequuntur natus dolorum nam molestias cum.</span>
+                
+                <div class="beliKeranjang">
+                <div class="container-beli">
+                <div class="backgroundBeliKeranjang bk" >
+                    <div class="beliAyamBkr">
+                    <img loading="lazy" src="ayambakar.jpeg" alt="" class="imgAyamBkr">
+                    <div class="ketBeliAyamBkr">
+                    <span class="spanAyamBkr">Ayam Bakar</span>
+                    <div class="jumlahAyamBkr">
+                    <span class="spanAyamBkr2">Jumlah</span>
+                    <div class="jumlahAyamBkr2">
+                    <span class="fa-solid fa-plus" id="beliPlus"></span>
+                    <span class="valueJmlAyam"></span>
+                    <span class="fa-solid fa-minus" id="beliMinus"></span>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+                <input type="submit" value="Beli" id="inp">
+                </div>
+                <button id="keranjangBtn" class="keranjangBtn"><i class="fa-solid fa-shopping-cart"></i></button>
+                </div>
+
+            </div>
+            <div class="footer footProduk">
+                <div class="social-media">
+                    <div><i class="fa-brands fa-instagram"><a href="#"></a></i></div>
+                    <div><i class="fa-brands fa-whatsapp"><a href="#"></a></i></div>
+                </div>
+                <span>&copy;2022 <a href="#">Kamila Food</a> - This website created by Yusuf Aqila and Zaki Hati Darmawan</span>
+            </div>
+
+            
+        </div>
+     </div>
+
+            <div class="page7 pa">
+                <div class="container-ayambkr">
+                  <div class="judulAyamBkr">
+                    <div class="back" id="back2">
+                    <i class="fa-solid fa-arrow-down"></i>
+                    </div>
+                    <h1 class="merk">Kamila Said</h1>
+                   </div>
+                    <div class="ayamBkrImg">
+                        <img loading="lazy" src="steak.jpeg" alt="">
+                    </div>
+                <div class="ketAyamBkr">
+                    <div class="containerKetAyamBkr">
+                    <h1 class="produk">Steak Ayam</h1>
+                    <div class="favoritbtn">
+                        <i class="fa-regular fa-heart " id="fabtn3"></i>
+                        <i class="fa-solid fa-heart fav" id="fabtn4"></i>
+                    </div>
+                    </div>
+                    <span class="hargaAyamBkr">Rp 17.000</span>
+                   
+                    
+                    <span class="deskAyamBkr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis delectus asperiores aliquam, expedita ad consectetur recusandae accusantium voluptatem dolores alias nostrum deleniti ipsum similique eos dignissimos quia impedit at corporis dolore? Adipisci consequuntur minus reiciendis quae quas maiores, officia, voluptatem expedita magni assumenda odio deleniti? Error fugit ipsum reprehenderit, velit adipisci iure natus sed incidunt nisi corporis sunt, eaque distinctio quasi voluptate laborum dolor accusantium enim harum! Suscipit ipsum dolorum obcaecati recusandae magni doloremque accusamus dignissimos fuga neque tempore, sit quam. Fugit asperiores veniam sapiente corporis consequatur necessitatibus repellat, cumque nihil sunt temporibus aspernatur consequuntur natus dolorum nam molestias cum.</span>
+                    
+                    <div class="beliKeranjang ">
+                        <div class="container-beli">
+                        <div class="backgroundBeliKeranjang bk" id="backBeliKeranjang2">
+                            <div class="beliAyamBkr">
+                            <img loading="lazy" src="steak.jpeg" alt="" class="imgAyamBkr">
+                            <div class="ketBeliAyamBkr">
+                            <span class="spanAyamBkr">Steak Ayam</span>
+                            <div class="jumlahAyamBkr">
+                            <span class="spanAyamBkr2">Jumlah</span>
+                            <div class="jumlahAyamBkr2">
+                            <span class="fa-solid fa-plus" id="beliPlus2"></span>
+                            <span class="valueJmlAyam" id="valueJmlAyam2"></span>
+                            <span class="fa-solid fa-minus" id="beliMinus2"></span>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                        <input type="submit" value="Beli" id="inp2">
+                        </div>
+                        <button id="keranjangBtn2" class="keranjangBtn"><i class="fa-solid fa-shopping-cart"></i></button>
+                        </div>
+
+                        <div class="footer footProduk">
+                            <div class="social-media">
+                                <div><i class="fa-brands fa-instagram"><a href="#"></a></i></div>
+                                <div><i class="fa-brands fa-whatsapp"><a href="#"></a></i></div>
+                            </div>
+                            <span>&copy;2022 <a href="#">Kamila Food</a> - This website created by Yusuf Aqila and Zaki Hati Darmawan</span>
+                        </div>
+                </div>
+                 </div>
+                </div>
+
+                <div class="page8 pa">
+                    <div class="container-ayambkr">
+                      <div class="judulAyamBkr">
+                        <div class="back" id="back3">
+                        <i class="fa-solid fa-arrow-down"></i>
+                        </div>
+                        <h1 class="merk">Kamila Food</h1>
+                       </div>
+                        <div class="ayamBkrImg">
+                            <img loading="lazy" src="ayamekor.jpeg" alt="">
+                        </div>
+                    <div class="ketAyamBkr">
+                        <div class="containerKetAyamBkr">
+                        <h1 class="produk">Ayam Bakar Ekoran</h1>
+                        <div class="favoritbtn">
+                            <i class="fa-regular fa-heart " id="fabtn5"></i>
+                            <i class="fa-solid fa-heart fav" id="fabtn6"></i>
+                        </div>
+                        </div>
+                        <span class="hargaAyamBkr">Rp 75.000</span>
+                       
+                        
+                        <span class="deskAyamBkr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis delectus asperiores aliquam, expedita ad consectetur recusandae accusantium voluptatem dolores alias nostrum deleniti ipsum similique eos dignissimos quia impedit at corporis dolore? Adipisci consequuntur minus reiciendis quae quas maiores, officia, voluptatem expedita magni assumenda odio deleniti? Error fugit ipsum reprehenderit, velit adipisci iure natus sed incidunt nisi corporis sunt, eaque distinctio quasi voluptate laborum dolor accusantium enim harum! Suscipit ipsum dolorum obcaecati recusandae magni doloremque accusamus dignissimos fuga neque tempore, sit quam. Fugit asperiores veniam sapiente corporis consequatur necessitatibus repellat, cumque nihil sunt temporibus aspernatur consequuntur natus dolorum nam molestias cum.</span>
+                        
+                        <div class="beliKeranjang ">
+                            <div class="container-beli">
+                            <div class="backgroundBeliKeranjang bk" id="backBeliKeranjang3">
+                                <div class="beliAyamBkr">
+                                <img loading="lazy" src="ayamekor.jpeg" alt="" class="imgAyamBkr">
+                                <div class="ketBeliAyamBkr">
+                                <span class="spanAyamBkr">Ayam Bakar Ekoran</span>
+                                <div class="jumlahAyamBkr">
+                                <span class="spanAyamBkr2">Jumlah</span>
+                                <div class="jumlahAyamBkr2">
+                                <span class="fa-solid fa-plus" id="beliPlus3"></span>
+                                <span class="valueJmlAyam" id="valueJmlAyam3"></span>
+                                <span class="fa-solid fa-minus" id="beliMinus3"></span>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                            </div>
+                            <input type="submit" value="Beli" id="inp3">
+                            </div>
+                            <button id="keranjangBtn3" class="keranjangBtn"><i class="fa-solid fa-shopping-cart"></i></button>
+                            </div>
+
+                            <div class="footer footProduk">
+                                <div class="social-media">
+                                    <div><i class="fa-brands fa-instagram"><a href="#"></a></i></div>
+                                    <div><i class="fa-brands fa-whatsapp"><a href="#"></a></i></div>
+                                </div>
+                                <span>&copy;2022 <a href="#">Kamila Food</a> - This website created by Yusuf Aqila and Zaki Hati Darmawan</span>
+                            </div>
+                    </div>
+                     </div>
+                    </div>
+
+                    <div class="page9 pa">
+                        <div class="container-ayambkr">
+                          <div class="judulAyamBkr">
+                            <div class="back" id="back4">
+                            <i class="fa-solid fa-arrow-down"></i>
+                            </div>
+                            <h1 class="merk">Kamila Food</h1>
+                           </div>
+                            <div class="ayamBkrImg">
+                                <img loading="lazy" src="tahuwalik.jpeg" alt="">
+                            </div>
+                        <div class="ketAyamBkr">
+                            <div class="containerKetAyamBkr">
+                            <h1 class="produk">Tahu Walik</h1>
+                            <div class="favoritbtn">
+                                <i class="fa-regular fa-heart " id="fabtn7"></i>
+                                <i class="fa-solid fa-heart fav" id="fabtn8"></i>
+                            </div>
+                            </div>
+                            <span class="hargaAyamBkr">Rp 25.000</span>
+                           
+                            
+                            <span class="deskAyamBkr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis delectus asperiores aliquam, expedita ad consectetur recusandae accusantium voluptatem dolores alias nostrum deleniti ipsum similique eos dignissimos quia impedit at corporis dolore? Adipisci consequuntur minus reiciendis quae quas maiores, officia, voluptatem expedita magni assumenda odio deleniti? Error fugit ipsum reprehenderit, velit adipisci iure natus sed incidunt nisi corporis sunt, eaque distinctio quasi voluptate laborum dolor accusantium enim harum! Suscipit ipsum dolorum obcaecati recusandae magni doloremque accusamus dignissimos fuga neque tempore, sit quam. Fugit asperiores veniam sapiente corporis consequatur necessitatibus repellat, cumque nihil sunt temporibus aspernatur consequuntur natus dolorum nam molestias cum.</span>
+                            
+                            <div class="beliKeranjang ">
+                                <div class="container-beli">
+                                <div class="backgroundBeliKeranjang bk" id="backBeliKeranjang4">
+                                    <div class="beliAyamBkr">
+                                    <img loading="lazy" src="tahuwalik.jpeg" alt="" class="imgAyamBkr">
+                                    <div class="ketBeliAyamBkr">
+                                    <span class="spanAyamBkr">Tahu Walik</span>
+                                    <div class="jumlahAyamBkr">
+                                    <span class="spanAyamBkr2">Jumlah</span>
+                                    <div class="jumlahAyamBkr2">
+                                    <span class="fa-solid fa-plus" id="beliPlus4"></span>
+                                    <span class="valueJmlAyam" id="valueJmlAyam4"></span>
+                                    <span class="fa-solid fa-minus" id="beliMinus4"></span>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <input type="submit" value="Beli" id="inp4">
+                                </div>
+                                <button id="keranjangBtn4" class="keranjangBtn"><i class="fa-solid fa-shopping-cart"></i></button>
+                                </div>
+    
+                                <div class="footer footProduk">
+                                    <div class="social-media">
+                                        <div><i class="fa-brands fa-instagram"><a href="#"></a></i></div>
+                                        <div><i class="fa-brands fa-whatsapp"><a href="#"></a></i></div>
+                                    </div>
+                                    <span>&copy;2022 <a href="#">Kamila Food</a> - This website created by Yusuf Aqila and Zaki Hati Darmawan</span>
+                                </div>
+
+                        </div>
+                         </div>
+                        </div>
+
+                        <div class="page10 pa">
+                            <div class="container-ayambkr">
+                              <div class="judulAyamBkr">
+                                <div class="back" id="back5">
+                                <i class="fa-solid fa-arrow-down"></i>
+                                </div>
+                                <h1 class="merk">Kamila Food</h1>
+                               </div>
+                                <div class="ayamBkrImg">
+                                    <img loading="lazy" src="nasibox.jpeg" alt="">
+                                </div>
+                            <div class="ketAyamBkr">
+                                <div class="containerKetAyamBkr">
+                                <h1 class="produk">Nasi Box</h1>
+                                <div class="favoritbtn">
+                                    <i class="fa-regular fa-heart " id="fabtn9"></i>
+                                    <i class="fa-solid fa-heart fav" id="fabtn10"></i>
+                                </div>
+                                </div>
+                                <span class="hargaAyamBkr">Rp 18.000</span>
+                               
+                                
+                                <span class="deskAyamBkr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis delectus asperiores aliquam, expedita ad consectetur recusandae accusantium voluptatem dolores alias nostrum deleniti ipsum similique eos dignissimos quia impedit at corporis dolore? Adipisci consequuntur minus reiciendis quae quas maiores, officia, voluptatem expedita magni assumenda odio deleniti? Error fugit ipsum reprehenderit, velit adipisci iure natus sed incidunt nisi corporis sunt, eaque distinctio quasi voluptate laborum dolor accusantium enim harum! Suscipit ipsum dolorum obcaecati recusandae magni doloremque accusamus dignissimos fuga neque tempore, sit quam. Fugit asperiores veniam sapiente corporis consequatur necessitatibus repellat, cumque nihil sunt temporibus aspernatur consequuntur natus dolorum nam molestias cum.</span>
+                                
+                                <div class="beliKeranjang ">
+                            <div class="container-beli">
+                            <div class="backgroundBeliKeranjang bk" id="backBeliKeranjang5">
+                                <div class="beliAyamBkr">
+                                <img loading="lazy" src="nasibox.jpeg" alt="" class="imgAyamBkr">
+                                <div class="ketBeliAyamBkr">
+                                <span class="spanAyamBkr">Ayam Bakar Ekoran</span>
+                                <div class="jumlahAyamBkr">
+                                <span class="spanAyamBkr2">Jumlah</span>
+                                <div class="jumlahAyamBkr2">
+                                <span class="fa-solid fa-plus" id="beliPlus5"></span>
+                                <span class="valueJmlAyam" id="valueJmlAyam5"></span>
+                                <span class="fa-solid fa-minus" id="beliMinus5"></span>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                            </div>
+                            <input type="submit" value="Beli" id="inp5">
+                            </div>
+                            <button id="keranjangBtn5" class="keranjangBtn"><i class="fa-solid fa-shopping-cart"></i></button>
+                            </div>
+
+                            <div class="footer footProduk">
+                                <div class="social-media">
+                                    <div><i class="fa-brands fa-instagram"><a href="#"></a></i></div>
+                                    <div><i class="fa-brands fa-whatsapp"><a href="#"></a></i></div>
+                                </div>
+                                <span>&copy;2022 <a href="#">Kamila Food</a> - This website created by Yusuf Aqila Zaki Hati Darmawan</span>
+                            </div>
+
+                            </div>
+                             </div>
+                            </div>
+
+                            <div class="page11 pa">
+                                <div class="container-ayambkr">
+                                  <div class="judulAyamBkr">
+                                    <div class="back" id="back6">
+                                    <i class="fa-solid fa-arrow-down"></i>
+                                    </div>
+                                    <h1 class="merk">Kamila Food</h1>
+                                   </div>
+                                    <div class="ayamBkrImg">
+                                        <img loading="lazy" src="nasibancaan.jpeg" alt="">
+                                    </div>
+                                <div class="ketAyamBkr">
+                                    <div class="containerKetAyamBkr">
+                                    <h1 class="produk">Nasi Bancaan</h1>
+                                    <div class="favoritbtn">
+                                        <i class="fa-regular fa-heart " id="fabtn11"></i>
+                                        <i class="fa-solid fa-heart fav" id="fabtn12"></i>
+                                    </div>
+                                    </div>
+                                    <span class="hargaAyamBkr">Rp 18.000</span>
+                                   
+                                    
+                                    <span class="deskAyamBkr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis delectus asperiores aliquam, expedita ad consectetur recusandae accusantium voluptatem dolores alias nostrum deleniti ipsum similique eos dignissimos quia impedit at corporis dolore? Adipisci consequuntur minus reiciendis quae quas maiores, officia, voluptatem expedita magni assumenda odio deleniti? Error fugit ipsum reprehenderit, velit adipisci iure natus sed incidunt nisi corporis sunt, eaque distinctio quasi voluptate laborum dolor accusantium enim harum! Suscipit ipsum dolorum obcaecati recusandae magni doloremque accusamus dignissimos fuga neque tempore, sit quam. Fugit asperiores veniam sapiente corporis consequatur necessitatibus repellat, cumque nihil sunt temporibus aspernatur consequuntur natus dolorum nam molestias cum.</span>
+                                    
+                                    <div class="beliKeranjang ">
+                            <div class="container-beli">
+                            <div class="backgroundBeliKeranjang bk" id="backBeliKeranjang6">
+                                <div class="beliAyamBkr">
+                                <img loading="lazy" src="nasibancaan.jpeg" alt="" class="imgAyamBkr">
+                                <div class="ketBeliAyamBkr">
+                                <span class="spanAyamBkr">Nasi Bancaan</span>
+                                <div class="jumlahAyamBkr">
+                                <span class="spanAyamBkr2">Jumlah</span>
+                                <div class="jumlahAyamBkr2">
+                                <span class="fa-solid fa-plus" id="beliPlus6"></span>
+                                <span class="valueJmlAyam" id="valueJmlAyam6"></span>
+                                <span class="fa-solid fa-minus" id="beliMinus6"></span>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                            </div>
+                            <input type="submit" value="Beli" id="inp6">
+                            </div>
+                            <button id="keranjangBtn6" class="keranjangBtn"><i class="fa-solid fa-shopping-cart"></i></button>
+                            </div>
+
+                            <div class="footer footProduk">
+                                <div class="social-media">
+                                    <div><i class="fa-brands fa-instagram"><a href="#"></a></i></div>
+                                    <div><i class="fa-brands fa-whatsapp"><a href="#"></a></i></div>
+                                </div>
+                                <span>&copy;2022 <a href="#">Kamila Food</a> - This website created by Yusuf Aqila and Zaki Hati Darmawan</span>
+                            </div>
+
+                                </div>
+                                 </div>
+                                </div>
+            <!-- Cart -->
+            <div class="page2 pa">
+                <h1 class="merk">Kamila Food</h1>
+                <span id="keranjangSpan" >- Belum ada produk yang ditambahkan di keranjang -</span>
+                <div class="container-keranjang">
+                  <div class="containerCardKeranjang">
+                    <div class="cardKeranjang cb" id="cardKeranjang">
+                        <img loading="lazy" src="ayambakar.jpeg" alt="">
+                        <div class="deskCardKeranjang">
+                            <span>Ayam Bakar</span>
+                            <span class="spanCardKeranjang">Rp 18, 000</span>
+                            <div class="jumlahAyamBkr3">
+                                <span class="fa-solid fa-plus" id="beliPlus7"></span>
+                                <span class="valueJmlAyam2" id="valueJmlAyam7"></span>
+                                <span class="fa-solid fa-minus" id="beliMinus7"></span>
+                            </div>
+                        </div>
+
+                        <div class="containerKeranjangBtn">
+                          <div class="checkbox">
+                            <i class="fa-solid fa-square-check cbx" id="cb"></i>
+                            <i class="fa-regular fa-square cbx cb" id="cb2"></i>
+                          </div>
+                            <i class="fa-solid fa-trash favoritKeranjangBtn" id="favoritKeranjangBtn"></i>     
+                        </div>
+
+                    </div>
+
+                    <div class="cardKeranjang cb" id="cardKeranjang2">
+                        <img loading="lazy" src="steak.jpeg" alt="">
+                        <div class="deskCardKeranjang">
+                            <span>Steak Ayam</span>
+                            <span class="spanCardKeranjang">Rp 17, 000</span>
+                            <div class="jumlahAyamBkr3">
+                                <span class="fa-solid fa-plus" id="beliPlus8"></span>
+                                <span class="valueJmlAyam2" id="valueJmlAyam8"></span>
+                                <span class="fa-solid fa-minus" id="beliMinus8"></span>
+                            </div>
+                        </div>
+
+                        <div class="containerKeranjangBtn">
+                          <div class="checkbox">
+                            <i class="fa-solid fa-square-check cbx" id="cb3"></i>
+                            <i class="fa-regular fa-square cbx cb" id="cb4"></i>
+                          </div>
+                            <i class="fa-solid fa-trash favoritKeranjangBtn" id="favoritKeranjangBtn2"></i>     
+                        </div>
+
+                    </div>
+
+                    <div class="cardKeranjang cb" id="cardKeranjang3">
+                        <img loading="lazy" src="ayamekor.jpeg" alt="">
+                        <div class="deskCardKeranjang">
+                            <span>Ayam Ekoran</span>
+                            <span class="spanCardKeranjang">Rp 75, 000</span>
+                            <div class="jumlahAyamBkr3">
+                                <span class="fa-solid fa-plus" id="beliPlus9"></span>
+                                <span class="valueJmlAyam2" id="valueJmlAyam9"></span>
+                                <span class="fa-solid fa-minus" id="beliMinus9"></span>
+                            </div>
+                        </div>
+
+                        <div class="containerKeranjangBtn">
+                          <div class="checkbox">
+                            <i class="fa-solid fa-square-check cbx" id="cb5"></i>
+                            <i class="fa-regular fa-square cbx cb" id="cb6"></i>
+                          </div>
+                            <i class="fa-solid fa-trash favoritKeranjangBtn" id="favoritKeranjangBtn3"></i>     
+                        </div>
+
+                    </div>
+
+                    <div class="cardKeranjang cb" id="cardKeranjang4">
+                        <img loading="lazy" src="tahuwalik.jpeg" alt="">
+                        <div class="deskCardKeranjang">
+                            <span>Tahu Walik</span>
+                            <span class="spanCardKeranjang">Rp 25, 000</span>
+                            <div class="jumlahAyamBkr3">
+                                <span class="fa-solid fa-plus" id="beliPlus10"></span>
+                                <span class="valueJmlAyam2" id="valueJmlAyam10"></span>
+                                <span class="fa-solid fa-minus" id="beliMinus10"></span>
+                            </div>
+                        </div>
+
+                        <div class="containerKeranjangBtn">
+                          <div class="checkbox">
+                            <i class="fa-solid fa-square-check cbx" id="cb7"></i>
+                            <i class="fa-regular fa-square cbx cb" id="cb8"></i>
+                          </div>
+                            <i class="fa-solid fa-trash favoritKeranjangBtn" id="favoritKeranjangBtn4"></i>     
+                        </div>
+
+                    </div>
+
+                    <div class="cardKeranjang cb" id="cardKeranjang5">
+                        <img loading="lazy" src="nasibox.jpeg" alt="">
+                        <div class="deskCardKeranjang">
+                            <span>Nasi Box</span>
+                            <span class="spanCardKeranjang">Rp 30, 000</span>
+                            <div class="jumlahAyamBkr3">
+                                <span class="fa-solid fa-plus" id="beliPlus11"></span>
+                                <span class="valueJmlAyam2" id="valueJmlAyam11"></span>
+                                <span class="fa-solid fa-minus" id="beliMinus11"></span>
+                            </div>
+                        </div>
+
+                        <div class="containerKeranjangBtn">
+                          <div class="checkbox">
+                            <i class="fa-solid fa-square-check cbx" id="cb9"></i>
+                            <i class="fa-regular fa-square cbx cb" id="cb10"></i>
+                          </div>
+                            <i class="fa-solid fa-trash favoritKeranjangBtn" id="favoritKeranjangBtn5"></i>     
+                        </div>
+
+                    </div>
+
+                    <div class="cardKeranjang cb" id="cardKeranjang6">
+                        <img loading="lazy" src="nasibancaan.jpeg" alt="">
+                        <div class="deskCardKeranjang">
+                            <span>Nasi Bancaan</span>
+                            <span class="spanCardKeranjang">Rp 250, 000</span>
+                            <div class="jumlahAyamBkr3">
+                                <span class="fa-solid fa-plus" id="beliPlus12"></span>
+                                <span class="valueJmlAyam2" id="valueJmlAyam12"></span>
+                                <span class="fa-solid fa-minus" id="beliMinus12"></span>
+                            </div>
+                        </div>
+
+                        <div class="containerKeranjangBtn">
+                          <div class="checkbox">
+                            <i class="fa-solid fa-square-check cbx" id="cb11"></i>
+                            <i class="fa-regular fa-square cbx cb" id="cb12"></i>
+                          </div>
+                            <i class="fa-solid fa-trash favoritKeranjangBtn" id="favoritKeranjangBtn6"></i>     
+                        </div>
+
+                    </div>
+                </div>
+                    <div class="beliKeranjangBtn">
+                        <div class="deskKeranjangBtn">
+                        <span class="spanKeranjangBtn" id="spanKeranjangBtn">Total harga</span>
+                        <span class="spanKeranjangBtn" id="spanKeranjangBtn2">Rp</span>
+                        </div>
+                        <input type="submit" value="Beli" id="beliKeranjangBtn2">
+                    </div>
+
+                </div>
+                <div class="footer3">
+                    <div class="social-media">
+                        <div><i class="fa-brands fa-instagram"><a href="#"></a></i></div>
+                        <div><i class="fa-brands fa-whatsapp"><a href="#"></a></i></div>
+                    </div>
+                    <span>&copy;2022 <a href="#">Kamila Food</a> - This website created by Yusuf Aqila and Zaki Hati Darmawan</span>
+                </div>
+
+            </div>
+            <!-- Favorit -->
+            <div class="page3 pa">
+                <h1 class="merk">Kamila Food</h1>
+                <span id="favoritSpan">- Belum ada produk yang ditambahkan di favorit -</span>
+                <div class="container-favorit">
+                    <div class="cardFavorit ca">
+                        <img loading="lazy" src="ayambakar.jpeg" alt="">
+                        <div class="deskCardFavorit">
+                            <span>Ayam Bakar</span>
+                            <span >Rp 18,000</span>
+                        </div>
+                        <div class="containerFavoritBtn">
+                        <i class="fa-solid fa-trash " id="favoritCardBtnNew1"></i>
+                        
+                        </div>
+                    </div>
+
+
+                    <div class="cardFavorit2 ca">
+                        <img loading="lazy" src="steak.jpeg" alt="">
+                        <div class="deskCardFavorit">
+                            <span>Steak Ayam</span>
+                            <span>Rp 17,000</span>
+                        </div>
+                        <div class="containerFavoritBtn">
+                        <i class="fa-solid fa-trash " id="favoritCardBtn2"></i>
+                        
+                        </div>
+                    </div>
+
+                    <div class="cardFavorit3 ca">
+                        <img loading="lazy" src="ayamekor.jpeg" alt="">
+                        <div class="deskCardFavorit">
+                            <span>Ayam Bakar Ekoran</span>
+                            <span>Rp 75,000</span>
+                        </div>
+                        <div class="containerFavoritBtn">
+                        <i class="fa-solid fa-trash " id="favoritCardBtn3"></i>
+                        
+                        </div>
+                    </div>
+
+                    <div class="cardFavorit4 ca">
+                        <img loading="lazy" src="tahuwalik.jpeg" alt="">
+                        <div class="deskCardFavorit">
+                            <span>Tahu Walik Bakso</span>
+                            <span>Rp 25,000</span>
+                        </div>
+                        <div class="containerFavoritBtn">
+                        <i class="fa-solid fa-trash " id="favoritCardBtn4"></i>
+                        
+                        </div>
+                    </div>
+
+                    <div class="cardFavorit5 ca">
+                        <img loading="lazy" src="nasibox.jpeg" alt="">
+                        <div class="deskCardFavorit">
+                            <span>Nasi Box</span>
+                            <span>Rp 30,000</span>
+                        </div>
+                        <div class="containerFavoritBtn">
+                        <i class="fa-solid fa-trash " id="favoritCardBtn5"></i>
+                        
+                        </div>
+                    </div>
+
+                    <div class="cardFavorit6 ca">
+                        <img src="nasibancaan.jpeg" alt="">
+                        <div class="deskCardFavorit">
+                            <span>Nasi Bancaan</span>
+                            <span>Rp 250,000</span>
+                        </div>
+                        <div class="containerFavoritBtn">
+                        <i class="fa-solid fa-trash " id="favoritCardBtn6"></i>
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer2">
+                    <div class="social-media">
+                        <div><i class="fa-brands fa-instagram"><a href="#"></a></i></div>
+                        <div><i class="fa-brands fa-whatsapp"><a href="#"></a></i></div>
+                    </div>
+                    <span>&copy;2022 <a href="#">Kamila Food</a> - This website created by Yusuf Aqila and Zaki Hati Darmawan</span>
+                </div>
+            </div>
+
+            <!-- About (Bagian mu Zak) -->
+            <div class="page4 pa">
+                <h1 class="merk">Kamila Food</h1>
+                <div class="hal1">
+                    <!-- <span class="garis1"></span>
+                    <span class="garis2"></span> -->
+                    <div class="container-hal1">
+                    <div class="deskHal1">
+                        <h3>Nasi Bancaan</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores numquam perspiciatis, sint vel, veritatis blanditiis ullam cum cupiditate totam minima voluptates vitae quas est laborum quam laboriosam doloribus! Magnam, commodi.</p>
+                    </div>
+                    <img loading="lazy" src="nasibancaan.jpeg" alt="">
+                    </div>
+                    <!-- <span class="garis3"></span>
+                    <span class="garis4"></span> -->
+                </div>
+
+                <div class="halo2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.207246831068!2d111.0111655144982!3d-6.744557967823035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70d31857d3c32d%3A0xe7b607ebfbbebda!2sKamila%20Food!5e0!3m2!1sid!2sid!4v1648390400720!5m2!1sid!2sid"  height="300px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="deskHalo2">
+                        <h3>Kunjungi Kami!</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit voluptates possimus, cum voluptatum eaque necessitatibus eligendi, debitis odit animi nisi neque quo accusantium magni autem consectetur sint fugiat soluta praesentium.</p>
+                    </div>
+                </div>
+                
+                <div class="footer">
+                    <div class="social-media">
+                        <div><i class="fa-brands fa-instagram"><a href="#"></a></i></div>
+                        <div><i class="fa-brands fa-whatsapp"><a href="#"></a></i></div>
+                    </div>
+                    <span>&copy;2022 <a href="#">Kamila Food</a> - This website created by Yusuf Aqila and Zaki Hati Darmawan</span>
+                </div>
+     
+
+            </div>
+            <!-- Ask
+            <div class="page5 pa">
+                <h1 class="merk">Kamila Said</h1>
+                <div class="chatbox">
+                    <span>Apa yang ingin anda tanyakan?</span>
+                    <div class="listPertanyaan">
+                        
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="social-media">
+                        <div><i class="fa-brands fa-instagram"><a href="#"></a></i></div>
+                        <div><i class="fa-brands fa-whatsapp"><a href="#"></a></i></div>
+                    </div>
+                    <span>&copy;2022 <a href="#">Kamila Food</a> - This website created by Yusuf Aqila and Zaki Hati Darmawan</span>
+                </div>
+            </div> -->
+            <div class="checkoutSec">
+               <div class="containerTagihan">
+                <div class="bgTagihanBox"></div>
+                <div class="tagihanBox">
+                    <span>Tagihan</span>
+                    <input type="text" id="jmlTagihan" disabled>
+                </div>
+               </div>
+               
+                <h2 class="daftar-menu">Menu Yang Dipesan</h2>
+                <div class="containerCardOrder" >
+                 <div class="cardOrder co" id="CO">
+                    <img loading="lazy" src="ayambakar.jpeg" alt="">
+                    <div class="cardOrderJudul">
+                        <span>Ayam Bakar</span>
+                        <span id="jmlayambkr"></span>
+                    </div>
+                    <div class="containerCOBag3">
+                    <span class="hargaCardOrder">Rp 18,000</span>
+                    <span class="fa-solid fa-minus minus1" id="min"></span>
+                    </div>
+                 </div>
+
+                 <div class="cardOrder co" id="CO2">
+                    <img loading="lazy" src="steak.jpeg" alt="" >
+                    <div class="cardOrderJudul">
+                        <span>Steak Ayam</span>
+                        <span id="jmlsteak"></span>
+                    </div>
+                    <div class="containerCOBag3">
+                    <span class="hargaCardOrder">Rp 17,000</span>
+                    <span class="fa-solid fa-minus minus1 " id="min2"></span>
+                    </div>
+                 </div>
+
+                 <div class="cardOrder co" id="CO3">
+                    <img loading="lazy" src="ayamekor.jpeg" alt="">
+                    <div class="cardOrderJudul">
+                        <span>Ayam Bakar Ekoran</span>
+                        <span id="jmlayamekor"></span>
+                    </div>
+                    <div class="containerCOBag3">
+                    <span class="hargaCardOrder">Rp 75,000</span>
+                    <span class="fa-solid fa-minus minus1 " id="min3"></span>
+                    </div>
+                 </div>
+
+                 <div class="cardOrder co" id="CO4">
+                    <img loading="lazy" src="tahuwalik.jpeg" alt="">
+                    <div class="cardOrderJudul">
+                        <span>Tahu Walik Bakso</span>
+                        <span id="jmltahuwalik"></span>
+                    </div>
+                    <div class="containerCOBag3">
+                    <span class="hargaCardOrder">Rp 25,000</span>
+                    <span class="fa-solid fa-minus minus1 " id="min4"></span>
+                    </div>
+                 </div>
+
+                 <div class="cardOrder co" id="CO5">
+                    <img loading="lazy" src="nasibox.jpeg" alt="">
+                    <div class="cardOrderJudul">
+                        <span>Nasi Box</span>
+                        <span id="jmlnasibox"></span>
+                    </div>
+                    <div class="containerCOBag3">
+                    <span class="hargaCardOrder">Rp 30,000</span>
+                    <span class="fa-solid fa-minus minus1" id="min5"></span>
+                    </div>
+                 </div>
+
+                 <div class="cardOrder co" id="CO6">
+                    <img loading="lazy" src="nasibancaan.jpeg" alt="">
+                    <div class="cardOrderJudul">
+                        <span>Paket Nasi Bancaan</span>
+                        <span id="jmlbancaan"></span>
+                    </div>
+                    <div class="containerCOBag3">
+                    <span class="hargaCardOrder">Rp 250,000</span>
+                    <span class="fa-solid fa-minus minus1 " id="min6"></span>
+                    </div>
+                 </div>
+
+                </div>
+
+                <div class="beliButton">
+                    <input type="submit" value="Beli" id="beliButton">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        
+        const house = document.querySelector('.house');
+        const cart = document.querySelector('.cart');
+        const heart = document.querySelector('.heart');
+        const user = document.querySelector('.user');
+        // const tanya = document.querySelector('.tanya');
+        const housePage = document.querySelector('.page');
+        const cartPage = document.querySelector('.page2');
+        const heartPage = document.querySelector('.page3');
+        const userPage = document.querySelector('.page4');
+        // const tanyaPage = document.querySelector('.page5');
+        const ayamBakar = document.querySelector('#ayambkr');
+        const steakAyam = document.querySelector('#steak');
+        const ayamEkor = document.querySelector('#ayambkrekr');
+        const tahuWalik = document.querySelector('#tahuwalik');
+        const nasiBox = document.querySelector('#nasibox');
+        const nasiBancaan = document.querySelector('#nasibancaan');
+        const deskAyamBkr = document.querySelector('.page6');
+        const deskSteak = document.querySelector('.page7');
+        const deskAyamEkor = document.querySelector('.page8');
+        const deskTahuWalik = document.querySelector('.page9');
+        const deskNasiBox = document.querySelector('.page10');
+        const deskNasiBancaan = document.querySelector('.page11');
+        const backArrow = document.querySelector('#back');
+        const backArrow2 = document.querySelector('#back2');
+        const backArrow3 = document.querySelector('#back3');
+        const backArrow4 = document.querySelector('#back4');
+        const backArrow5 = document.querySelector('#back5');
+        const backArrow6 = document.querySelector('#back6');
+        const favoritBtn = document.querySelector('#fabtn');
+        const favoritBtn2 = document.querySelector('#fabtn2');
+        const favoritBtn3 = document.querySelector('#fabtn3');
+        const favoritBtn4 = document.querySelector('#fabtn4');
+        const favoritBtn5= document.querySelector('#fabtn5');
+        const favoritBtn6 = document.querySelector('#fabtn6');
+        const favoritBtn7 = document.querySelector('#fabtn7');
+        const favoritBtn8 = document.querySelector('#fabtn8');
+        const favoritBtn9 = document.querySelector('#fabtn9');
+        const favoritBtn10 = document.querySelector('#fabtn10');
+        const favoritBtn11 = document.querySelector('#fabtn11');
+        const favoritBtn12 = document.querySelector('#fabtn12');
+        const jmlTagihan = document.querySelector('#jmlTagihan');
+        const tambah = document.querySelector('#plus');
+        const tambah2 = document.querySelector('#plus2');
+        const tambah3 = document.querySelector('#plus3');
+        const tambah4 = document.querySelector('#plus4');
+        const tambah5 = document.querySelector('#plus5');
+        const tambah6 = document.querySelector('#plus6');
+        const cardOrder = document.querySelector('#CO');
+        const cardOrder2 = document.querySelector('#CO2');
+        const cardOrder3 = document.querySelector('#CO3');
+        const cardOrder4 = document.querySelector('#CO4');
+        const cardOrder5 = document.querySelector('#CO5');
+        const cardOrder6 = document.querySelector('#CO6');
+        const minus = document.querySelector('#min');
+        const minus2 = document.querySelector('#min2');
+        const minus3 = document.querySelector('#min3');
+        const minus4 = document.querySelector('#min4');
+        const minus5 = document.querySelector('#min5');
+        const minus6 = document.querySelector('#min6');
+        const jmlAyamBkr = document.querySelector('#jmlayambkr');
+        const jmlSteak = document.querySelector('#jmlsteak');
+        const jmlAyamEkor = document.querySelector('#jmlayamekor');
+        const jmlTahuWalik = document.querySelector('#jmltahuwalik');
+        const jmlNasiBox = document.querySelector('#jmlnasibox');
+        const jmlBancaan = document.querySelector('#jmlbancaan');
+        const favoritCardBtn = document.querySelector('#favoritCardBtnNew1');
+        const favoritCardBtn2 = document.querySelector('#favoritCardBtn2');
+        const favoritCardBtn3 = document.querySelector('#favoritCardBtn3');
+        const favoritCardBtn4 = document.querySelector('#favoritCardBtn4');
+        const favoritCardBtn5 = document.querySelector('#favoritCardBtn5');
+        const favoritCardBtn6 = document.querySelector('#favoritCardBtn6');
+        const cardFavorit = document.querySelector('.cardFavorit');
+        const cardFavorit2 = document.querySelector('.cardFavorit2');
+        const cardFavorit3 = document.querySelector('.cardFavorit3');
+        const cardFavorit4 = document.querySelector('.cardFavorit4');
+        const cardFavorit5 = document.querySelector('.cardFavorit5');
+        const cardFavorit6= document.querySelector('.cardFavorit6');
+        const favoritSpan = document.querySelector('#favoritSpan');
+        const beliButton = document.querySelector('#beliButton');
+        const beliPlus = document.querySelector('#beliPlus');
+        const beliPlus2 = document.querySelector('#beliPlus2');
+        const beliPlus3 = document.querySelector('#beliPlus3');
+        const beliPlus4 = document.querySelector('#beliPlus4');
+        const beliPlus5 = document.querySelector('#beliPlus5');
+        const beliPlus6 = document.querySelector('#beliPlus6');
+        const beliPlus7 = document.querySelector('#beliPlus7');
+        const beliPlus8 = document.querySelector('#beliPlus8');
+        const beliPlus9 = document.querySelector('#beliPlus9');
+        const beliPlus10 = document.querySelector('#beliPlus10');
+        const beliPlus11 = document.querySelector('#beliPlus11');
+        const beliPlus12 = document.querySelector('#beliPlus12');
+        const beliMinus = document.querySelector('#beliMinus');
+        const beliMinus2 = document.querySelector('#beliMinus2');
+        const beliMinus3 = document.querySelector('#beliMinus3');
+        const beliMinus4 = document.querySelector('#beliMinus4');
+        const beliMinus5 = document.querySelector('#beliMinus5');
+        const beliMinus6 = document.querySelector('#beliMinus6');
+        const beliMinus7 = document.querySelector('#beliMinus7');
+        const beliMinus8 = document.querySelector('#beliMinus8');
+        const beliMinus9 = document.querySelector('#beliMinus9');
+        const beliMinus10 = document.querySelector('#beliMinus10');
+        const beliMinus11 = document.querySelector('#beliMinus11');
+        const beliMinus12 = document.querySelector('#beliMinus12');
+        const valueJmlAyam = document.querySelector(".valueJmlAyam");
+        const valueJmlAyam2 = document.querySelector("#valueJmlAyam2");
+        const valueJmlAyam3 = document.querySelector("#valueJmlAyam3");
+        const valueJmlAyam4 = document.querySelector("#valueJmlAyam4");
+        const valueJmlAyam5 = document.querySelector("#valueJmlAyam5");
+        const valueJmlAyam6 = document.querySelector("#valueJmlAyam6");
+        const valueJmlAyam7 = document.querySelector("#valueJmlAyam7");
+        const valueJmlAyam8 = document.querySelector("#valueJmlAyam8");
+        const valueJmlAyam9 = document.querySelector("#valueJmlAyam9");
+        const valueJmlAyam10 = document.querySelector("#valueJmlAyam10");
+        const valueJmlAyam11 = document.querySelector("#valueJmlAyam11");
+        const valueJmlAyam12 = document.querySelector("#valueJmlAyam12");
+        const beliSubmit = document.querySelector('#inp');
+        const beliSubmit2 = document.querySelector("#inp2");
+        const beliSubmit3 = document.querySelector("#inp3");
+        const beliSubmit4 = document.querySelector("#inp4");
+        const beliSubmit5 = document.querySelector("#inp5");
+        const beliSubmit6 = document.querySelector("#inp6");
+        const backgroundBeliKeranjang = document.querySelector('.backgroundBeliKeranjang');
+        const backgroundBeliKeranjang2 = document.querySelector('#backBeliKeranjang2');
+        const backgroundBeliKeranjang3 = document.querySelector('#backBeliKeranjang3');
+        const backgroundBeliKeranjang4 = document.querySelector('#backBeliKeranjang4');
+        const backgroundBeliKeranjang5 = document.querySelector('#backBeliKeranjang5');
+        const backgroundBeliKeranjang6 = document.querySelector('#backBeliKeranjang6');
+        const cb = document.querySelector('#cb');
+        const cb2 = document.querySelector('#cb2');
+        const cb3 = document.querySelector('#cb3');
+        const cb4 = document.querySelector('#cb4');
+        const cb5 = document.querySelector('#cb5');
+        const cb6 = document.querySelector('#cb6');
+        const cb7 = document.querySelector('#cb7');
+        const cb8 = document.querySelector('#cb8');
+        const cb9 = document.querySelector('#cb9');
+        const cb10 = document.querySelector('#cb10');
+        const cb11 = document.querySelector('#cb11');
+        const cb12 = document.querySelector('#cb12');
+
+        const keranjangSpan = document.querySelector('#keranjangSpan');
+        const keranjangBtn = document.querySelector('#keranjangBtn');
+        const keranjangBtn2 = document.querySelector('#keranjangBtn2');
+        const keranjangBtn3 = document.querySelector('#keranjangBtn3');
+        const keranjangBtn4 = document.querySelector('#keranjangBtn4');
+        const keranjangBtn5 = document.querySelector('#keranjangBtn5');
+        const keranjangBtn6 = document.querySelector('#keranjangBtn6');
+        const cardKeranjang = document.querySelector('#cardKeranjang');
+        const favoritKeranjangBtn = document.querySelector('#favoritKeranjangBtn');
+        const favoritKeranjangBtn2 = document.querySelector('#favoritKeranjangBtn2');
+        const favoritKeranjangBtn3 = document.querySelector('#favoritKeranjangBtn3');
+        const favoritKeranjangBtn4 = document.querySelector('#favoritKeranjangBtn4');
+        const favoritKeranjangBtn5 = document.querySelector('#favoritKeranjangBtn5');
+        const favoritKeranjangBtn6 = document.querySelector('#favoritKeranjangBtn6');
+        const beliKeranjangBtn2 = document.querySelector('#beliKeranjangBtn2');
+
+        const spanKeranjangBtn = document.querySelector('#spanKeranjangBtn');
+        const spanKeranjangBtn2 = document.querySelector('#spanKeranjangBtn2');
+        const no = 0;
+
+
+        house.addEventListener("click", () => {
+            house.classList.add('fa');
+            cart.classList.remove('fa');
+            heart.classList.remove('fa');
+            user.classList.remove('fa');
+            // tanya.classList.remove('fa');
+            cartPage.classList.add('pa')
+            userPage.classList.add('pa');
+            heartPage.classList.add('pa');
+            // tanyaPage.classList.add('pa');
+            housePage.classList.remove('pa')
+            deskAyamBkr.classList.add('pa');
+            deskSteak.classList.add('pa');
+            deskAyamEkor.classList.add('pa');
+            deskTahuWalik.classList.add('pa');
+            deskNasiBox.classList.add('pa');
+            deskNasiBancaan.classList.add('pa');
+
+        })
+        cart.addEventListener("click", () => {
+            cart.classList.add('fa');
+            house.classList.remove('fa');
+            heart.classList.remove('fa');
+            user.classList.remove('fa');
+            // tanya.classList.remove('fa');
+            housePage.classList.add('pa');
+            userPage.classList.add('pa');
+            heartPage.classList.add('pa');
+            // tanyaPage.classList.add('pa');
+            cartPage.classList.remove('pa');
+            deskAyamBkr.classList.add('pa');
+            deskSteak.classList.add('pa');
+            deskAyamEkor.classList.add('pa');
+            deskTahuWalik.classList.add('pa');
+            deskNasiBox.classList.add('pa');
+            deskNasiBancaan.classList.add('pa');
+        })
+        heart.addEventListener("click", () => {
+            heart.classList.add('fa');
+            house.classList.remove('fa');
+            cart.classList.remove('fa');
+            user.classList.remove('fa');
+            // tanya.classList.remove('fa');
+            housePage.classList.add('pa');
+            cartPage.classList.add('pa');
+            userPage.classList.add('pa');
+            // tanyaPage.classList.add('pa');
+            heartPage.classList.remove('pa');
+            deskAyamBkr.classList.add('pa');
+            deskSteak.classList.add('pa');
+            deskAyamEkor.classList.add('pa');
+            deskTahuWalik.classList.add('pa');
+            deskNasiBox.classList.add('pa');
+            deskNasiBancaan.classList.add('pa');
+        })
+        user.addEventListener("click", () => {
+            user.classList.add('fa');
+            house.classList.remove('fa');
+            cart.classList.remove('fa');
+            heart.classList.remove('fa');
+            // tanya.classList.remove('fa');
+            housePage.classList.add('pa');
+            cartPage.classList.add('pa');
+            heartPage.classList.add('pa');
+            // tanyaPage.classList.add('pa');
+            userPage.classList.remove('pa');
+            deskAyamBkr.classList.add('pa');
+            deskSteak.classList.add('pa');
+            deskAyamEkor.classList.add('pa');
+            deskTahuWalik.classList.add('pa');
+            deskNasiBox.classList.add('pa');
+            deskNasiBancaan.classList.add('pa');
+
+        })
+        // tanya.addEventListener("click", () => {
+        //     tanya.classList.add('fa');
+        //     house.classList.remove('fa');
+        //     cart.classList.remove('fa');
+        //     heart.classList.remove('fa');
+        //     user.classList.remove('fa');
+        //     housePage.classList.add('pa');
+        //     cartPage.classList.add('pa');
+        //     heartPage.classList.add('pa');
+        //     userPage.classList.add('pa');
+        //     // tanyaPage.classList.remove('pa');
+        //     deskAyamBkr.classList.add('pa');
+        //     deskSteak.classList.add('pa');
+        //     deskAyamEkor.classList.add('pa');
+        //     deskTahuWalik.classList.add('pa');
+        //     deskNasiBox.classList.add('pa');
+        //     deskNasiBancaan.classList.add('pa');
+
+        // })
+
+        ayamBakar.addEventListener("click", () => {
+            housePage.classList.add('pa');
+            deskAyamBkr.classList.remove('pa');
+        })
+        steakAyam.addEventListener("click", () => {
+            housePage.classList.add('pa');
+            deskSteak.classList.remove('pa');
+        })
+        ayamEkor.addEventListener("click", () => {
+            housePage.classList.add('pa');
+            deskAyamEkor.classList.remove('pa');
+        })
+        tahuWalik.addEventListener("click", () => {
+            housePage.classList.add('pa');
+            deskTahuWalik.classList.remove('pa');
+        })
+        nasiBox.addEventListener("click", () => {
+            housePage.classList.add('pa');
+            deskNasiBox.classList.remove('pa');
+        })
+        nasiBancaan.addEventListener("click", () => {
+            housePage.classList.add('pa');
+            deskNasiBancaan.classList.remove('pa');
+        })
+
+        backArrow.addEventListener("click", () => {
+            housePage.classList.remove('pa');
+            deskAyamBkr.classList.add('pa');
+            deskSteak.classList.add('pa');
+            deskAyamEkor.classList.add('pa');
+            deskTahuWalik.classList.add('pa');
+            deskNasiBox.classList.add('pa');
+            deskNasiBancaan.classList.add('pa');
+        })
+        backArrow2.addEventListener("click", () => {
+            housePage.classList.remove('pa');
+            deskAyamBkr.classList.add('pa');
+            deskSteak.classList.add('pa');
+            deskAyamEkor.classList.add('pa');
+            deskTahuWalik.classList.add('pa');
+            deskNasiBox.classList.add('pa');
+            deskNasiBancaan.classList.add('pa');
+        })
+        backArrow3.addEventListener("click", () => {
+            housePage.classList.remove('pa');
+            deskAyamBkr.classList.add('pa');
+            deskSteak.classList.add('pa');
+            deskAyamEkor.classList.add('pa');
+            deskTahuWalik.classList.add('pa');
+            deskNasiBox.classList.add('pa');
+            deskNasiBancaan.classList.add('pa');
+        })
+        backArrow4.addEventListener("click", () => {
+            housePage.classList.remove('pa');
+            deskAyamBkr.classList.add('pa');
+            deskSteak.classList.add('pa');
+            deskAyamEkor.classList.add('pa');
+            deskTahuWalik.classList.add('pa');
+            deskNasiBox.classList.add('pa');
+            deskNasiBancaan.classList.add('pa');
+        })
+        backArrow5.addEventListener("click", () => {
+            housePage.classList.remove('pa');
+            deskAyamBkr.classList.add('pa');
+            deskSteak.classList.add('pa');
+            deskAyamEkor.classList.add('pa');
+            deskTahuWalik.classList.add('pa');
+            deskNasiBox.classList.add('pa');
+            deskNasiBancaan.classList.add('pa');
+        })
+        backArrow6.addEventListener("click", () => {
+            housePage.classList.remove('pa');
+            deskAyamBkr.classList.add('pa');
+            deskSteak.classList.add('pa');
+            deskAyamEkor.classList.add('pa');
+            deskTahuWalik.classList.add('pa');
+            deskNasiBox.classList.add('pa');
+            deskNasiBancaan.classList.add('pa');
+        })
+        let favorit = 0;
+        
+        favoritBtn.addEventListener("click", () => {
+            favoritBtn2.classList.remove('fav');
+            favoritBtn.classList.add('fav');
+            cardFavorit.classList.remove('ca');
+            favorit ++;
+            favoritSpan.classList.add('sa');
+            if (favorit >= 1) {
+            favoritSpan.classList.add('sa');
+        }
+        if (favorit < 1) {
+            favoritSpan.classList.remove('sa');
+        }
+
+        })
+        favoritBtn2.addEventListener("click", () => {
+            favoritBtn2.classList.add('fav');
+            favoritBtn.classList.remove('fav');
+            cardFavorit.classList.add('ca');
+            favorit --;
+            if (favorit >= 1) {
+            favoritSpan.classList.add('sa');
+        }
+        if (favorit < 1) {
+            favoritSpan.classList.remove('sa');
+        }
+        })
+        favoritBtn3.addEventListener("click", () => {
+            favoritBtn4.classList.remove('fav');
+            favoritBtn3.classList.add('fav');
+            cardFavorit2.classList.remove('ca');
+            favorit ++;
+            favoritSpan.classList.add('sa');
+            if (favorit >= 1) {
+            favoritSpan.classList.add('sa');
+        }
+        if (favorit < 1) {
+            favoritSpan.classList.remove('sa');
+        }
+        })
+        favoritBtn4.addEventListener("click", () => {
+            favoritBtn4.classList.add('fav');
+            favoritBtn3.classList.remove('fav');
+            cardFavorit2.classList.add('ca');
+            favorit --;
+            if (favorit >= 1) {
+            favoritSpan.classList.add('sa');
+        }
+        if (favorit < 1) {
+            favoritSpan.classList.remove('sa');
+        }
+        })
+        favoritBtn5.addEventListener("click", () => {
+            favoritBtn6.classList.remove('fav');
+            favoritBtn5.classList.add('fav');
+            cardFavorit3.classList.remove('ca');
+            favorit ++;
+            favoritSpan.classList.add('sa');
+            if (favorit >= 1) {
+            favoritSpan.classList.add('sa');
+        }
+        if (favorit < 1) {
+            favoritSpan.classList.remove('sa');
+        }
+        })
+        favoritBtn6.addEventListener("click", () => {
+            favoritBtn6.classList.add('fav');
+            favoritBtn5.classList.remove('fav');
+            cardFavorit3.classList.add('ca');
+            favorit --;
+            if (favorit >= 1) {
+            favoritSpan.classList.add('sa');
+        }
+        if (favorit < 1) {
+            favoritSpan.classList.remove('sa');
+        }
+        })
+        favoritBtn7.addEventListener("click", () => {
+            favoritBtn8.classList.remove('fav');
+            favoritBtn7.classList.add('fav');
+            cardFavorit4.classList.remove('ca');
+            favorit ++;
+            favoritSpan.classList.add('sa');
+            if (favorit >= 1) {
+            favoritSpan.classList.add('sa');
+        }
+        if (favorit < 1) {
+            favoritSpan.classList.remove('sa');
+        }
+        })
+        favoritBtn8.addEventListener("click", () => {
+            favoritBtn8.classList.add('fav');
+            favoritBtn7.classList.remove('fav');
+            cardFavorit4.classList.add('ca');
+            favorit --;
+            if (favorit >= 1) {
+            favoritSpan.classList.add('sa');
+        }
+        if (favorit < 1) {
+            favoritSpan.classList.remove('sa');
+        }
+        })
+        favoritBtn9.addEventListener("click", () => {
+            favoritBtn10.classList.remove('fav');
+            favoritBtn9.classList.add('fav');
+            cardFavorit5.classList.remove('ca');
+            favorit ++;
+            favoritSpan.classList.add('sa');
+            if (favorit >= 1) {
+            favoritSpan.classList.add('sa');
+        }
+        if (favorit < 1) {
+            favoritSpan.classList.remove('sa');
+        }
+        })
+        favoritBtn10.addEventListener("click", () => {
+            favoritBtn10.classList.add('fav');
+            favoritBtn9.classList.remove('fav');
+            cardFavorit5.classList.add('ca');
+            favorit --;
+            if (favorit >= 1) {
+            favoritSpan.classList.add('sa');
+        }
+        if (favorit < 1) {
+            favoritSpan.classList.remove('sa');
+        }
+        })
+        favoritBtn11.addEventListener("click", () => {
+            favoritBtn12.classList.remove('fav');
+            favoritBtn11.classList.add('fav');
+            cardFavorit6.classList.remove('ca');
+            favorit ++;
+            favoritSpan.classList.add('sa');
+            if (favorit >= 1) {
+            favoritSpan.classList.add('sa');
+        }
+        if (favorit < 1) {
+            favoritSpan.classList.remove('sa');
+        }
+        })
+        favoritBtn12.addEventListener("click", () => {
+            favoritBtn12.classList.add('fav');
+            favoritBtn11.classList.remove('fav');
+            cardFavorit6.classList.add('ca');
+            favorit --;
+            if (favorit >= 1) {
+            favoritSpan.classList.add('sa');
+        }
+        if (favorit < 1) {
+            favoritSpan.classList.remove('sa');
+        }
+        })
+
+        if (favorit >= 1) {
+            favoritSpan.classList.add('sa');
+        }
+        if (favorit < 1) {
+            favoritSpan.classList.remove('sa');
+        }
+        
+        let a= 0;
+        var a2= 0;
+        var a3= 0;
+        var a4= 0;
+        var a5= 0;
+        var a6= 0;
+        let h = 0;
+        let h2 = 0;
+        let h3 = 0;
+        let h4 = 0;
+        let h5 = 0;
+        let h6 = 0;
+        let htotal = h+h2+h3+h4+h5+h6;
+        let b = 18000;
+        let c= 17000;
+        let d= 75000;
+        let e = 25000;
+        let f= 30000;
+        let g= 250000;
+        jmlTagihan.value = "Rp";
+        console.log(a);
+        
+        
+        tambah.addEventListener("click", () => {
+            cardOrder.classList.remove('co');
+            h++;
+            jmlAyamBkr.innerHTML = "x" + h;
+            a += b;
+            jmlTagihan.value = "Rp " + a;
+            console.log(a);
+            console.log(h);   
+        })
+        minus.addEventListener("click", () => {
+            
+            h--;
+            jmlAyamBkr.innerHTML = "x" + h;
+            a -= b;
+            jmlTagihan.value = "Rp " + a;
+            if (h === 0) {
+                cardOrder.classList.add('co');
+            }
+            console.log(a);
+            
+        })
+
+        tambah2.addEventListener("click", () => {
+            cardOrder2.classList.remove('co');
+            h2++;
+            jmlSteak.innerHTML = "x" + h2;
+            a += c;
+            jmlTagihan.value = "Rp " + a;
+            console.log(a);
+        })
+        minus2.addEventListener("click", () => {
+            h2--;
+            jmlSteak.innerHTML = "x" + h2;
+            a -= c;
+            jmlTagihan.value = "Rp " + a;
+            console.log(a);
+            if (h2 === 0) {
+                cardOrder2.classList.add('co');
+            }
+        })
+
+        tambah3.addEventListener("click", () => {
+            cardOrder3.classList.remove('co');
+            h3++;
+            jmlAyamEkor.innerHTML = "x" + h3;
+            a += d;
+            jmlTagihan.value = "Rp " + a;
+            console.log(a);
+        })
+        minus3.addEventListener("click", () => {
+            h3--;
+            jmlAyamEkor.innerHTML = "x" + h3;
+            a -= d;
+            jmlTagihan.value = "Rp " + a;
+            
+            if (h3 === 0) {
+                cardOrder3.classList.add('co');
+            }
+            console.log(a);
+        })
+
+        tambah4.addEventListener("click", () => {
+            cardOrder4.classList.remove('co');
+            h4++;
+            jmlTahuWalik.innerHTML = "x" + h4;
+            a += e;
+            jmlTagihan.value = "Rp " + a;
+            console.log(a);
+        })
+        minus4.addEventListener("click", () => {
+            h4--;
+            jmlTahuWalik.innerHTML = "x" + h4;
+            a -= e;
+            jmlTagihan.value = "Rp " + a;
+            if (h4 === 0) {
+                cardOrder4.classList.add('co');
+            }
+            console.log(a);
+        })
+
+        tambah5.addEventListener("click", () => {
+            cardOrder5.classList.remove('co');
+            h5++;
+            jmlNasiBox.innerHTML = "x" + h5;
+            a += f;
+            jmlTagihan.value = "Rp " + a;
+            console.log(a);
+        })
+        minus5.addEventListener("click", () => {
+            h5--;
+            jmlNasiBox.innerHTML = "x" + h5;
+            a -= f;
+            jmlTagihan.value = "Rp " + a;
+            if (h5 === 0) {
+                cardOrder5.classList.add('co');
+            }
+            console.log(a);
+        })
+
+        tambah6.addEventListener("click", () => {
+            cardOrder6.classList.remove('co');
+            h6++;
+            jmlBancaan.innerHTML = "x" + h6;
+            a += g;
+            jmlTagihan.value = "Rp " + a;
+            console.log(a);
+        })
+        
+        minus6.addEventListener("click", () => {
+            h6--;
+            jmlBancaan.innerHTML = "x" + h6;
+            a -= g;
+            jmlTagihan.value = "Rp " + a;
+            if (h6 === 0) {
+                cardOrder6.classList.add('co');
+            }
+            console.log(a);
+        })
+        
+        
+        beliButton.addEventListener("click", () => {
+            console.log(a);
+            let pesanan1 ="";
+            let pesanan2 ="";
+            let pesanan3 ="";
+            let pesanan4 ="";
+            let pesanan5 ="";
+            let pesanan6 ="";
+
+            if (h > 0) {
+                pesanan1 = "- Ayam Bakar " + h + "x"+" (Rp 18,000)";
+            }
+            if (h2 > 0) {
+                pesanan2 = "%3A%0A- Steak Ayam " + h2 + "x"+" (Rp 17,000)";
+            }
+            if (h3 > 0) {
+                pesanan3 = "%3A%0A- Ayam Ekor " + h3 + "x"+" (Rp 75,000)";
+            }
+            if (h4 > 0) {
+                pesanan4 = "%3A%0A- Tahu Walik " + h4 + "x"+" (Rp 25,000)";
+            }
+            if (h5 > 0) {
+                pesanan5 = "%3A%0A- Nasi Box " + h5 + "x"+" (Rp 30,000)";
+            }
+            if (h6 > 0) {
+                pesanan6 = "%3A%0A- Paket Nasi Bancaan " + h6 + "x"+" (Rp 250,000)";
+            }
+            let linkWa = "https://api.whatsapp.com/send?phone=6287732002929&text=Form%20Pemesanan%0A%0ANama%3A%0AAlamat%3A%0APesanan%3A%0A"+pesanan1+pesanan2+pesanan3+pesanan4+pesanan5+pesanan6+"%0ATotal%20%3A" + " Rp "+ a +"%0ANote%3A%0A%0ALebih%20baik%20kirim%20alamat%20anda%20melalui%20fitur%20share%20lokasi%20di%20Whatsapp.";
+            window.open(linkWa, '_blank');
+            beliButton.classList.toggle('inp');
+            a = 0;
+            jmlTagihan.value = "Rp " + a;
+            console.log(a);
+            h = 0;
+            jmlAyamBkr.innerHTML = "X" + h;
+            h2 = 0;
+            jmlSteak.innerHTML = "X" + h2;
+            h3 = 0;
+            jmlAyamEkor.innerHTML = "X" + h3;
+            h4 = 0;
+            jmlTahuWalik.innerHTML = "X" + h4;
+            h5 = 0;
+            jmlNasiBox.innerHTML = "X" + h5;
+            h6 = 0;
+            jmlBancaan.innerHTML = "X" + h6;
+            cardOrder.classList.add('co');
+            cardOrder2.classList.add('co');
+            cardOrder3.classList.add('co');
+            cardOrder4.classList.add('co');
+            cardOrder5.classList.add('co');
+            cardOrder6.classList.add('co');
+        })
+
+        favoritCardBtn.addEventListener("click", () => {
+            favoritBtn2.classList.add('fav');
+            favoritBtn.classList.remove('fav');
+            cardFavorit.classList.add('ca');
+            favorit --;
+            if (favorit >= 1) {
+            favoritSpan.classList.add('sa');
+        }
+        if (favorit < 1) {
+            favoritSpan.classList.remove('sa');
+        }
+        })
+        favoritCardBtn2.addEventListener("click", () => {
+            favoritBtn4.classList.add('fav');
+            favoritBtn3.classList.remove('fav');
+            cardFavorit2.classList.add('ca');
+            favorit --;
+            if (favorit >= 1) {
+            favoritSpan.classList.add('sa');
+        }
+        if (favorit < 1) {
+            favoritSpan.classList.remove('sa');
+        }
+        })
+        favoritCardBtn3.addEventListener("click", () => {
+            favoritBtn6.classList.add('fav');
+            favoritBtn5.classList.remove('fav');
+            cardFavorit3.classList.add('ca');
+            favorit --;
+            if (favorit >= 1) {
+            favoritSpan.classList.add('sa');
+        }
+        if (favorit < 1) {
+            favoritSpan.classList.remove('sa');
+        }
+        })
+        favoritCardBtn4.addEventListener("click", () => {
+            favoritBtn8.classList.add('fav');
+            favoritBtn7.classList.remove('fav');
+            cardFavorit4.classList.add('ca');
+            favorit --;
+            if (favorit >= 1) {
+            favoritSpan.classList.add('sa');
+        }
+        if (favorit < 1) {
+            favoritSpan.classList.remove('sa');
+        }
+        })
+        favoritCardBtn5.addEventListener("click", () => {
+            favoritBtn10.classList.add('fav');
+            favoritBtn9.classList.remove('fav');
+            cardFavorit5.classList.add('ca');
+            favorit --;
+            if (favorit >= 1) {
+            favoritSpan.classList.add('sa');
+        }
+        if (favorit < 1) {
+            favoritSpan.classList.remove('sa');
+        }
+        })
+        favoritCardBtn6.addEventListener("click", () => {
+            favoritBtn12.classList.add('fav');
+            favoritBtn11.classList.remove('fav');
+            cardFavorit6.classList.add('ca');
+            favorit --;
+            if (favorit >= 1) {
+            favoritSpan.classList.add('sa');
+        }
+        if (favorit < 1) {
+            favoritSpan.classList.remove('sa');
+        }
+        })
+        
+        
+        var jmlBeli= 0;
+        valueJmlAyam.innerHTML = jmlBeli;
+        beliPlus.addEventListener("click", () => {
+            valueJmlAyam.innerHTML = jmlBeli+=1;
+            
+        })
+        beliMinus.addEventListener("click", () => {
+            
+            if (jmlBeli > 1) {
+                valueJmlAyam.innerHTML = jmlBeli -=1;
+            }
+            
+        })
+        beliSubmit.addEventListener("click", () => {
+            
+            backgroundBeliKeranjang.classList.toggle('bk');
+            beliSubmit.classList.toggle('inp');
+            h +=jmlBeli
+            jmlAyamBkr.innerHTML = "x" + h;
+            a += jmlBeli*b;
+            jmlTagihan.value = "Rp " + a;
+            if (jmlBeli > 0) {
+                cardOrder.classList.remove('co');
+            }
+            valueJmlAyam.innerHTML = jmlBeli=0;
+            console.log(a);
+        })
+        var jmlBeli2= 0;
+        valueJmlAyam2.innerHTML = jmlBeli2;
+
+        beliPlus2.addEventListener("click", () => {
+            valueJmlAyam2.innerHTML = jmlBeli2+=1;
+            
+        })
+        beliMinus2.addEventListener("click", () => {
+            
+            if (jmlBeli2 > 1) {
+                valueJmlAyam2.innerHTML = jmlBeli2 -=1;
+            }
+            
+        })
+        beliSubmit2.addEventListener("click", () => {
+            
+            backgroundBeliKeranjang2.classList.toggle('bk');
+            beliSubmit2.classList.toggle('inp');
+            h2 +=jmlBeli2
+            jmlSteak.innerHTML = "x" + h2;
+            a += jmlBeli2*c;
+            jmlTagihan.value = "Rp " + a;
+            if (jmlBeli2 > 0) {
+                cardOrder2.classList.remove('co');
+            }
+            valueJmlAyam2.innerHTML = jmlBeli2=0;
+            console.log(a);
+        })
+
+        var jmlBeli3= 0;
+        valueJmlAyam3.innerHTML = jmlBeli3;
+
+        beliPlus3.addEventListener("click", () => {
+            valueJmlAyam3.innerHTML = jmlBeli3+=1;
+            
+        })
+        beliMinus3.addEventListener("click", () => {
+            
+            if (jmlBeli3 > 1) {
+                valueJmlAyam3.innerHTML = jmlBeli3 -=1;
+            }
+            
+        })
+        beliSubmit3.addEventListener("click", () => {
+            
+            backgroundBeliKeranjang3.classList.toggle('bk');
+            beliSubmit3.classList.toggle('inp');
+            h3 +=jmlBeli3
+            jmlAyamEkor.innerHTML = "x" + h3;
+            a += jmlBeli3*d;
+            jmlTagihan.value = "Rp " + a;
+            console.log(a);
+            if (jmlBeli3 > 0) {
+                cardOrder3.classList.remove('co');
+            }
+            valueJmlAyam3.innerHTML = jmlBeli3=0;
+            
+        })
+
+        var jmlBeli4= 0;
+        valueJmlAyam4.innerHTML = jmlBeli4;
+
+        beliPlus4.addEventListener("click", () => {
+            valueJmlAyam4.innerHTML = jmlBeli4+=1;
+            
+        })
+        beliMinus4.addEventListener("click", () => {
+            
+            if (jmlBeli4 > 1) {
+                valueJmlAyam4.innerHTML = jmlBeli4 -=1;
+            }
+            
+        })
+        beliSubmit4.addEventListener("click", () => {
+            
+            backgroundBeliKeranjang4.classList.toggle('bk');
+            beliSubmit4.classList.toggle('inp');
+            h4 +=jmlBeli4
+            jmlTahuWalik.innerHTML = "x" + h4;
+            a += jmlBeli4*e;
+            jmlTagihan.value = "Rp " + a;
+            console.log(a);
+            if (jmlBeli4 > 0) {
+                cardOrder4.classList.remove('co');
+            }
+            valueJmlAyam4.innerHTML = jmlBeli4=0;
+            
+        })
+
+        var jmlBeli5= 0;
+        valueJmlAyam5.innerHTML = jmlBeli5;
+
+        beliPlus5.addEventListener("click", () => {
+            valueJmlAyam5.innerHTML = jmlBeli5+=1;
+            
+        })
+        beliMinus5.addEventListener("click", () => {
+            
+            if (jmlBeli5 > 1) {
+                valueJmlAyam5.innerHTML = jmlBeli5 -=1;
+            }
+            
+        })
+        beliSubmit5.addEventListener("click", () => {
+            
+            backgroundBeliKeranjang5.classList.toggle('bk');
+            beliSubmit5.classList.toggle('inp');
+            h5 +=jmlBeli5
+            jmlNasiBox.innerHTML = "x" + h5;
+            a += jmlBeli5*f;
+            jmlTagihan.value = "Rp " + a;
+            console.log(a);
+            if (jmlBeli5 > 0) {
+                cardOrder5.classList.remove('co');
+            }
+            valueJmlAyam5.innerHTML = jmlBeli5=0;
+            
+        })
+
+        var jmlBeli6= 0;
+        valueJmlAyam6.innerHTML = jmlBeli6;
+
+        beliPlus6.addEventListener("click", () => {
+            valueJmlAyam6.innerHTML = jmlBeli6+=1;
+            
+        })
+        beliMinus6.addEventListener("click", () => {
+            
+            if (jmlBeli6 > 1) {
+                valueJmlAyam6.innerHTML = jmlBeli6 -=1;
+            }
+            
+        })
+        beliSubmit6.addEventListener("click", () => {
+            
+            backgroundBeliKeranjang6.classList.toggle('bk');
+            beliSubmit6.classList.toggle('inp');
+            h6 +=jmlBeli6
+            jmlBancaan.innerHTML = "x" + h6;
+            a += jmlBeli6*g;
+            jmlTagihan.value = "Rp " + a;
+            console.log(a);
+            if (jmlBeli6 > 0) {
+                cardOrder6.classList.remove('co');
+            }
+            valueJmlAyam6.innerHTML = jmlBeli6=0;
+            
+            
+        })
+
+        // Keranjang section
+        let jmlBeli7= 0;
+        let jmlBeli8= 0;
+        let jmlBeli9= 0;
+        let jmlBeli10= 0;
+        let jmlBeli11= 0;
+        let jmlBeli12= 0;
+        let jmlBarang= 0;
+        let jmlHargaBarang= 0;
+        let valueCb= 0;
+        let valueCb2= 0;
+        let valueCb3= 0;
+        let valueCb4= 0;
+        let valueCb5= 0;
+        let valueCb6= 0;
+        valueJmlAyam7.innerHTML = jmlBeli7;
+        valueJmlAyam8.innerHTML = jmlBeli8;
+        valueJmlAyam9.innerHTML = jmlBeli9;
+        valueJmlAyam10.innerHTML = jmlBeli10;
+        valueJmlAyam11.innerHTML = jmlBeli11;
+        valueJmlAyam12.innerHTML = jmlBeli12;
+        spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+        spanKeranjangBtn2.innerHTML = "Rp "+0;
+        console.log(valueCb);
+        console.log(valueCb2);
+        console.log(valueCb3);
+        console.log(valueCb4);
+        console.log(valueCb5);
+        console.log(valueCb6);
+
+        keranjangBtn.addEventListener("click", () => {
+            cardKeranjang.classList.remove('cb');
+            valueJmlAyam7.innerHTML = jmlBeli7 +=1;
+            
+            if (valueCb < 1){
+                valueCb++;
+
+            }
+            if (valueCb > 0) {
+                jmlBarang+= 1;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                jmlHargaBarang +=b;
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+            cb2.classList.add('cb');
+            cb.classList.remove('cb');
+            console.log(valueCb);
+            
+        })
+        favoritKeranjangBtn.addEventListener("click", () => {
+            cardKeranjang.classList.add('cb');
+            if (valueCb > 0) {
+                jmlBarang -= jmlBeli7;
+                jmlHargaBarang -= jmlBeli7*b;
+                
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+            valueJmlAyam7.innerHTML = jmlBeli7= 0; 
+            valueCb--;
+            console.log(valueCb);
+        })
+
+        beliPlus7.addEventListener("click", () => {
+            valueJmlAyam7.innerHTML = jmlBeli7+=1;  
+            console.log(valueCb); 
+            if (valueCb > 0) {
+                jmlBarang+= 1;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                jmlHargaBarang +=b;
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+        })
+        beliMinus7.addEventListener("click", () => {
+            valueJmlAyam7.innerHTML = jmlBeli7 -=1;
+            console.log(valueCb); 
+            if (valueCb > 0) {
+                jmlBarang-= 1;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                jmlHargaBarang -=b;
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+            if (jmlBeli7 < 1) {
+                cardKeranjang.classList.add('cb');
+                jmlBarang -= jmlBeli7;
+                jmlHargaBarang -= jmlBeli7*b;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+                valueCb=0;
+                console.log(valueCb);
+
+            }
+            
+            
+        })
+        cb.addEventListener("click", () => {
+            cb.classList.add('cb');
+            cb2.classList.remove('cb');
+            jmlBarang -= jmlBeli7;
+            jmlHargaBarang -= jmlBeli7*b;
+            spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+            spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            valueCb--;
+            console.log(valueCb);
+        })
+        cb2.addEventListener("click", () => {
+            cb2.classList.add('cb');
+            cb.classList.remove('cb');
+            jmlBarang += jmlBeli7;
+            jmlHargaBarang += jmlBeli7*b;
+            spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+            spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            valueCb++;
+            console.log(valueCb);
+        })
+
+        keranjangBtn2.addEventListener("click", () => {
+            cardKeranjang2.classList.remove('cb');
+            valueJmlAyam8.innerHTML = jmlBeli8 +=1;
+            
+            if (valueCb2 < 1){
+                valueCb2++;
+            }
+            if (valueCb2 > 0) {
+                jmlBarang+= 1;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                jmlHargaBarang +=c;
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+            console.log(valueCb2);
+            cb4.classList.add('cb');
+            cb3.classList.remove('cb');
+        })
+        favoritKeranjangBtn2.addEventListener("click", () => {
+            cardKeranjang2.classList.add('cb');
+            if (valueCb2 > 0) {
+                jmlBarang -= jmlBeli8;
+                jmlHargaBarang -= jmlBeli8*c;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+            valueJmlAyam8.innerHTML = jmlBeli8= 0; 
+            valueCb2--;
+            console.log(valueCb2);
+        })
+
+        beliPlus8.addEventListener("click", () => {
+            valueJmlAyam8.innerHTML = jmlBeli8+=1;
+            console.log(valueCb2); 
+            if (valueCb2 > 0) {
+                jmlBarang+= 1;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                jmlHargaBarang +=c;
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+        })
+        beliMinus8.addEventListener("click", () => {
+            valueJmlAyam8.innerHTML = jmlBeli8 -=1;
+            console.log(valueCb2); 
+            if (valueCb2 > 0) {
+                jmlBarang-= 1;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                jmlHargaBarang -=c;
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+            if (jmlBeli8 < 1) {
+                cardKeranjang2.classList.add('cb');
+                jmlBarang -= jmlBeli8;
+                jmlHargaBarang -= jmlBeli8*c;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+                valueCb2=0;
+                console.log(valueCb2);
+            }
+            
+        })
+        cb3.addEventListener("click", () => {
+            cb3.classList.add('cb');
+            cb4.classList.remove('cb');
+            jmlBarang -= jmlBeli8;
+            jmlHargaBarang -= jmlBeli8*c; 
+            spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+            spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            valueCb2--;
+            console.log(valueCb2);
+        })
+        cb4.addEventListener("click", () => {
+            cb4.classList.add('cb');
+            cb3.classList.remove('cb');
+            jmlBarang += jmlBeli8;
+            jmlHargaBarang += jmlBeli8*c;
+            spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+            spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            valueCb2++;
+            console.log(valueCb2);
+        })
+
+        keranjangBtn3.addEventListener("click", () => {
+            cardKeranjang3.classList.remove('cb');
+            valueJmlAyam9.innerHTML = jmlBeli9 +=1;
+            
+            if (valueCb3 < 1){
+                valueCb3++;
+            }
+            if (valueCb3 > 0) {
+                jmlBarang+= 1;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                jmlHargaBarang +=d;
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+            console.log(valueCb3);
+            cb6.classList.add('cb');
+            cb5.classList.remove('cb');
+        })
+        favoritKeranjangBtn3.addEventListener("click", () => {
+            cardKeranjang3.classList.add('cb');
+            if (valueCb3 > 0) {
+                jmlBarang -= jmlBeli9;
+                jmlHargaBarang -= jmlBeli9*d;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+            valueJmlAyam9.innerHTML = jmlBeli9= 0;
+            valueCb3--;
+            console.log(valueCb3);
+        })
+
+        beliPlus9.addEventListener("click", () => {
+            valueJmlAyam9.innerHTML = jmlBeli9+=1;
+            console.log(valueCb3); 
+            if (valueCb3 > 0) {
+                jmlBarang+= 1;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                jmlHargaBarang +=d;
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+                valueCb3--;
+            }
+        })
+        beliMinus9.addEventListener("click", () => {
+            valueJmlAyam9.innerHTML = jmlBeli9 -=1;
+            console.log(valueCb3); 
+            if (valueCb3 > 0) {
+                jmlBarang-= 1;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                jmlHargaBarang -=d;
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+            if (jmlBeli9 < 1) {
+                cardKeranjang3.classList.add('cb');
+                jmlBarang -= jmlBeli9;
+                jmlHargaBarang -= jmlBeli9*d;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+                valueCb3=0;
+                console.log(valueCb3);
+            }
+
+        })
+        cb5.addEventListener("click", () => {
+            cb5.classList.add('cb');
+            cb6.classList.remove('cb');
+            jmlBarang -= jmlBeli9;
+            jmlHargaBarang -= jmlBeli9*d; 
+            spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+            spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            valueCb3--;
+            console.log(valueCb3);
+        })
+        cb6.addEventListener("click", () => {
+            cb6.classList.add('cb');
+            cb5.classList.remove('cb');
+            jmlBarang += jmlBeli9;
+            jmlHargaBarang += jmlBeli9*d;
+            spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+            spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            valueCb3++;
+            console.log(valueCb3);
+        })
+
+        keranjangBtn4.addEventListener("click", () => {
+            cardKeranjang4.classList.remove('cb');
+            valueJmlAyam10.innerHTML = jmlBeli10 +=1;
+            
+            if (valueCb4 < 1){
+                valueCb4++;
+            }
+            if (valueCb4 > 0) {
+                jmlBarang+= 1;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                jmlHargaBarang +=e;
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+            console.log(valueCb4);
+            cb8.classList.add('cb');
+            cb7.classList.remove('cb');
+        })
+        favoritKeranjangBtn4.addEventListener("click", () => {
+            cardKeranjang4.classList.add('cb');
+            if (valueCb4 > 0) {
+                jmlBarang -= jmlBeli10;
+                jmlHargaBarang -= jmlBeli10*e;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+            valueJmlAyam10.innerHTML = jmlBeli10= 0;
+            valueCb4--;
+            console.log(valueCb4);
+        })
+
+        beliPlus10.addEventListener("click", () => {
+            valueJmlAyam10.innerHTML = jmlBeli10+=1;
+            console.log(valueCb4); 
+            if (valueCb4 > 0) {
+                jmlBarang+= 1;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                jmlHargaBarang +=e;
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+        })
+        beliMinus10.addEventListener("click", () => {
+            valueJmlAyam10.innerHTML = jmlBeli10 -=1;
+            console.log(valueCb4); 
+            if (valueCb4 > 0) {
+                jmlBarang-= 1;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                jmlHargaBarang -=e;
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+            if (jmlBeli10 < 1) {
+                cardKeranjang4.classList.add('cb');
+                jmlBarang -= jmlBeli10;
+                jmlHargaBarang -= jmlBeli10*e;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+                valueCb4=0;
+                console.log(valueCb4);
+            }
+
+        })
+        cb7.addEventListener("click", () => {
+            cb7.classList.add('cb');
+            cb8.classList.remove('cb');
+            jmlBarang -= jmlBeli10;
+            jmlHargaBarang -= jmlBeli10*e; 
+            spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+            spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            valueCb4--;
+            console.log(valueCb4);
+        })
+        cb8.addEventListener("click", () => {
+            cb8.classList.add('cb');
+            cb7.classList.remove('cb');
+            jmlBarang += jmlBeli10;
+            jmlHargaBarang += jmlBeli10*e;
+            spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+            spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            valueCb4++;
+            console.log(valueCb4);
+        })
+
+        keranjangBtn5.addEventListener("click", () => {
+            cardKeranjang5.classList.remove('cb');
+            valueJmlAyam11.innerHTML = jmlBeli11 +=1;
+            
+            if (valueCb5 < 1){
+                valueCb5++;
+            }
+            if (valueCb5 > 0) {
+                jmlBarang+= 1;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                jmlHargaBarang +=f;
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+            console.log(valueCb5);
+            cb10.classList.add('cb');
+            cb9.classList.remove('cb');
+        })
+        favoritKeranjangBtn5.addEventListener("click", () => {
+            cardKeranjang5.classList.add('cb');
+            if (valueCb5 > 0) {
+                jmlBarang -= jmlBeli11;
+                jmlHargaBarang -= jmlBeli11*f;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+            valueJmlAyam11.innerHTML = jmlBeli11= 0;
+            valueCb5--;
+            console.log(valueCb5);
+        })
+
+        beliPlus11.addEventListener("click", () => {
+            valueJmlAyam11.innerHTML = jmlBeli11+=1;
+            console.log(valueCb5); 
+            if (valueCb5 > 0) {
+                jmlBarang+= 1;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                jmlHargaBarang +=f;
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+        })
+        beliMinus11.addEventListener("click", () => {
+            valueJmlAyam11.innerHTML = jmlBeli11 -=1;
+            console.log(valueCb5); 
+            if (valueCb5 > 0) {
+                jmlBarang-= 1;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                jmlHargaBarang -=f;
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+            if (jmlBeli11 < 1) {
+                cardKeranjang5.classList.add('cb');
+                jmlBarang -= jmlBeli11;
+                jmlHargaBarang -= jmlBeli11*f;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+                valueCb5=0;
+                console.log(valueCb5);
+            }
+ 
+        })
+        cb9.addEventListener("click", () => {
+            cb9.classList.add('cb');
+            cb10.classList.remove('cb');
+            jmlBarang -= jmlBeli11;
+            jmlHargaBarang -= jmlBeli11*f; 
+            spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+            spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            valueCb5--;
+            console.log(valueCb5);
+        })
+        cb10.addEventListener("click", () => {
+            cb10.classList.add('cb');
+            cb9.classList.remove('cb');
+            jmlBarang += jmlBeli11;
+            jmlHargaBarang += jmlBeli11*f;
+            spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+            spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            valueCb5++;
+            console.log(valueCb5);
+        })
+
+        keranjangBtn6.addEventListener("click", () => {
+            cardKeranjang6.classList.remove('cb');
+            valueJmlAyam12.innerHTML = jmlBeli12 +=1;
+            
+            if (valueCb6 < 1){
+                valueCb6++;
+            }
+            if (valueCb6 > 0) {
+                jmlBarang+= 1;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                jmlHargaBarang +=g;
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+            console.log(valueCb6);
+            cb12.classList.add('cb');
+            cb11.classList.remove('cb');
+        })
+        favoritKeranjangBtn6.addEventListener("click", () => {
+            cardKeranjang6.classList.add('cb');
+            if (valueCb6 > 0) {
+                jmlBarang -= jmlBeli12;
+                jmlHargaBarang -= jmlBeli12*g;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+            valueJmlAyam12.innerHTML = jmlBeli12= 0;
+            valueCb6--;
+            console.log(valueCb6);
+        })
+
+        beliPlus12.addEventListener("click", () => {
+            valueJmlAyam12.innerHTML = jmlBeli12+=1;
+            console.log(valueCb6); 
+            if (valueCb6 > 0) {
+                jmlBarang+= 1;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                jmlHargaBarang +=g;
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+            
+        })
+        beliMinus12.addEventListener("click", () => {
+            valueJmlAyam12.innerHTML = jmlBeli12 -=1;
+            console.log(valueCb6); 
+            if (valueCb6 > 0) {
+                jmlBarang-= 1;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                jmlHargaBarang -=g;
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            }
+            if (jmlBeli12 < 1) {
+                cardKeranjang6.classList.add('cb');
+                jmlBarang -= jmlBeli12;
+                jmlHargaBarang -= jmlBeli12*g;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+                valueCb6=0;
+                console.log(valueCb6);
+            }
+            
+        })
+        cb11.addEventListener("click", () => {
+            cb11.classList.add('cb');
+            cb12.classList.remove('cb');
+            jmlBarang -= jmlBeli12;
+            jmlHargaBarang -= jmlBeli12*g; 
+            spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+            spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            valueCb6--;
+            console.log(valueCb6);
+        })
+        cb12.addEventListener("click", () => {
+            cb12.classList.add('cb');
+            cb11.classList.remove('cb');
+            jmlBarang += jmlBeli12;
+            jmlHargaBarang += jmlBeli12*g;
+            spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+            spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+            valueCb6++;
+            console.log(valueCb6);
+        })
+
+        beliKeranjangBtn2.addEventListener("click", () => {
+            console.log(a);
+            a += jmlHargaBarang;
+            jmlTagihan.value = "Rp " + a;
+            if (valueCb > 0) {
+                cardOrder.classList.remove('co');
+                h+=jmlBeli7;
+                jmlAyamBkr.innerHTML = "x" + h;
+                cardKeranjang.classList.add('cb');
+                jmlBarang-=jmlBeli7;
+                jmlHargaBarang-=jmlBeli7*b;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+                jmlBeli7 =0;
+                valueCb=0;
+            }
+            if (valueCb2 > 0) {
+                cardOrder2.classList.remove('co');
+                h2+=jmlBeli8;
+                jmlSteak.innerHTML = "x" + h2;
+                cardKeranjang2.classList.add('cb');
+                jmlBarang-=jmlBeli8;
+                jmlHargaBarang-=jmlBeli8*c;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+                jmlBeli8 =0;
+                valueCb2=0;
+            }
+            if (valueCb3 > 0) {
+                cardOrder3.classList.remove('co');
+                h3+=jmlBeli9;
+                jmlAyamEkor.innerHTML = "x" + h3;
+                cardKeranjang3.classList.add('cb');
+                jmlBarang-=jmlBeli9;
+                jmlHargaBarang-=jmlBeli9*d;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+                jmlBeli9 =0;
+                valueCb3=0;
+            }
+            if (valueCb4 > 0) {
+                cardOrder4.classList.remove('co');
+                h4+=jmlBeli10;
+                jmlTahuWalik.innerHTML = "x" + h4;
+                cardKeranjang4.classList.add('cb');
+                jmlBarang-=jmlBeli10;
+                jmlHargaBarang-=jmlBeli10*e;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+                jmlBeli10 =0;
+                valueCb4=0;
+            }
+            if (valueCb5 > 0) {
+                cardOrder5.classList.remove('co');
+                h5+=jmlBeli11;
+                jmlNasiBox.innerHTML = "x" + h5;
+                cardKeranjang5.classList.add('cb');
+                jmlBarang-=jmlBeli11;
+                jmlHargaBarang-=jmlBeli11*f;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+                jmlBeli11 =0;
+                valueCb5=0;
+            }
+            if (valueCb6 > 0) {
+                cardOrder6.classList.remove('co');
+                h6+=jmlBeli12;
+                jmlBancaan.innerHTML = "x" + h6;
+                cardKeranjang6.classList.add('cb');
+                jmlBarang-=jmlBeli12;
+                jmlHargaBarang-=jmlBeli12*g;
+                spanKeranjangBtn.innerHTML = "Total Harga ("+jmlBarang+" barang)";
+                spanKeranjangBtn2.innerHTML = "Rp "+jmlHargaBarang;
+                jmlBeli12 =0;
+                valueCb6=0;
+            }
+        })
+        // Akhir keranjang section
+        
+        function openFullScreen() {
+            requestFullScreen()
+        }
+        openFullScreen();
+    </script>
+</body>
+</html>
